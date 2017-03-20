@@ -1072,7 +1072,6 @@ function Tongzhi(){
                 </div>');
                 tongzhiList.appendTo($(".inform-container .inform-list"));
             }
-
             /*忽略单条通知*/
             var tieZiId = parseInt($(".inform-list-children .count-time .tieziId").html());
             $(".inform-list-children .ignore").click(function(){
@@ -1114,11 +1113,13 @@ function Tongzhi(){
                    }
                })
             });
-            /*检测通知栏是否有内容。*/
+            /*检测通知栏是否有内容*/
             if($(".inform-container .inform-list").html().length<1){
                $(".noInformation").show();
+               $(".inform-bell i").hide();
             }else{
                 $(".noInformation").hide();
+                $(".inform-bell i").show();
             }
         }
     });

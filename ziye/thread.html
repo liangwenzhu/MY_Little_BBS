@@ -128,8 +128,9 @@
                 </table>
             </div>
         </div>
+        <!--回帖-->
         <div class="huitie">
-            <div class="container">
+            <div class="message-container container">
                 <div class="top-title">
                     <span class="vote-topleft">对<b></b>楼，我也说一句</span>
                     <img class="close" src="../imgs/modal/wrong.png">
@@ -223,6 +224,26 @@
 <header>
     <div class="nav-window">
         <div class="postings-search"><input class="form-control" placeholder="搜搜"></div>
+        <div class="inform">
+            <div class="inform-container">
+                <div class="noInformation">世界，清静了</div>
+                <p class="count"><span class="ignore-all">全部忽略</span><span class="inform-count">你共有<b>0</b>条通知</span></p>
+                <div class="inform-list">
+                    <div class="inform-list-children">
+                        <i class="glyphicon glyphicon-star icon"></i><p class="inform-content"><a href="#">是不只是编码~~~~</a><span class="ignore">忽略</span></p>
+                        <p class="count-time"><b>3<span>条回复</span></b><span class="inform-time">2017-03-15 18:17:33</span></p>
+                    </div>
+                    <div class="inform-list-children">
+                        <i class="glyphicon glyphicon-star icon"></i><p class="inform-content"><a href="#">不只是编码不只是编码不只是编码不只是编码~~~~</a></p>
+                        <p class="count-time"><b>3<span>条回复</span></b><span class="inform-time">2017-03-15 18:17:33</span></p>
+                    </div>
+                    <div class="inform-list-children">
+                        <i class="glyphicon glyphicon-star icon"></i><p class="inform-content"><a href="#">不只是编码不只是编码不只是编码不只是编码~~~~</a></p>
+                        <p class="count-time"><b>3<span>条回复</span></b><span class="inform-time">2017-03-15 18:17:33</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="personal-setting">
             <div class="clear-touxiang">
                 <img class="touxiang" src="#">
@@ -252,7 +273,7 @@
             <ul class="operation-ul">
                 <li class="search"><i class="glyphicon glyphicon-search"></i></li>
                 <li><span class="glyphicon glyphicon-heart"></span></li>
-                <li><span class="glyphicon glyphicon-bell"></span></li>
+                <li class="inform-bell"><span class="glyphicon glyphicon-bell"></span><i></i></li>
                 <li><span><img class="littleHead" src="#"></span></li>
                 <li><span class="glyphicon glyphicon-align-justify"></span></li>
             </ul>
@@ -446,6 +467,7 @@
                 <div class="section-footer">
                     <div class="operation">
                         <button class="btn message-btn" id="message">发表回复</button>
+                        <span class="fontCountControl">你还可用输入<b>200</b>个字符</span>
                     </div>
                 </div>
             </div>

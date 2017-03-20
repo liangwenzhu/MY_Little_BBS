@@ -783,6 +783,109 @@ header .nav-window .postings-search input {
   margin-left: 10px;
   margin-top: 20px;
 }
+header .nav-window .inform {
+  position: absolute;
+  width: 430px;
+  height: 300px;
+  right: 0px;
+  top: 40px;
+  background-color: white;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.78);
+  -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.78);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.78);
+  overflow: auto;
+}
+header .nav-window .inform .inform-container {
+  position: relative;
+  width: 380px;
+  margin: 0 auto;
+}
+header .nav-window .inform .inform-container .noInformation {
+  position: absolute;
+  width: 380px;
+  height: 300px;
+  line-height: 300px;
+  text-align: center;
+}
+header .nav-window .inform .inform-container .count {
+  width: 100%;
+  height: 40px;
+  line-height: 50px;
+}
+header .nav-window .inform .inform-container .count .ignore-all {
+  cursor: pointer;
+  color: #e23428;
+}
+header .nav-window .inform .inform-container .count .inform-count {
+  float: right;
+}
+header .nav-window .inform .inform-container .count .inform-count b {
+  color: #e23428;
+}
+header .nav-window .inform .inform-container .inform-list .inform-list-children {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.22);
+}
+header .nav-window .inform .inform-container .inform-list .inform-list-children:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+  maigin-bottom: 10px;
+}
+header .nav-window .inform .inform-container .inform-list .inform-list-children .ignore {
+  float: right;
+  color: #e23428;
+  cursor: pointer;
+}
+header .nav-window .inform .inform-container .inform-list .inform-list-children .icon {
+  display: inline-block;
+  width: 20px;
+  margin-right: 5px;
+  vertical-align: top;
+  color: red;
+  float: left;
+  min-height: 40px;
+  line-height: 40px;
+}
+header .nav-window .inform .inform-container .inform-list .inform-list-children .inform-content {
+  display: inline-block;
+  float: right;
+  width: 355px;
+  min-height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+header .nav-window .inform .inform-container .inform-list .inform-list-children .inform-content b {
+  margin-left: 10px;
+  color: red;
+}
+header .nav-window .inform .inform-container .inform-list .inform-list-children .inform-content b span {
+  font-weight: 400;
+  color: black;
+}
+header .nav-window .inform .inform-container .inform-list .inform-list-children .inform-content .inform-time {
+  float: right;
+  display: inline-block;
+  vertical-align: middle;
+}
+header .nav-window .inform .inform-container .inform-list .inform-list-children .count-time {
+  width: 355px;
+  float: right;
+  margin-top: -10px;
+}
+header .nav-window .inform .inform-container .inform-list .inform-list-children .count-time b {
+  vertical-align: middle;
+  color: red;
+}
+header .nav-window .inform .inform-container .inform-list .inform-list-children .count-time b span {
+  font-weight: 400;
+  color: black;
+}
+header .nav-window .inform .inform-container .inform-list .inform-list-children .count-time .inform-time {
+  float: right;
+  display: inline-block;
+  vertical-align: middle;
+}
 header .nav-window .personal-setting {
   position: absolute;
   right: 0;
@@ -903,6 +1006,20 @@ header .header-top .operation-ul li span img {
   text-align: center;
   width: 28px;
   height: 28px;
+}
+header .header-top .operation-ul .inform-bell {
+  position: relative;
+}
+header .header-top .operation-ul .inform-bell i {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  background-color: red;
+  top: 5px;
+  right: 5px;
 }
 header .header-top .operation-ul .active {
   background-color: white;
@@ -1372,6 +1489,13 @@ header .bbs-information ul li a:hover {
   width: 100px;
   color: white;
   background-color: #277da0;
+}
+.message .content .leave-message-container .message-container .section-footer .operation .fontCountControl {
+  float: right;
+  color: rgba(255, 255, 255, 0.62);
+}
+.message .content .leave-message-container .message-container .section-footer .operation .fontCountControl b {
+  color: white;
 }
 .footer {
   margin-top: 30px;

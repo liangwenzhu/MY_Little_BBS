@@ -903,6 +903,113 @@ header{
         margin-top:20px;
       }
     }
+    .inform{
+      position: absolute;
+      width:430px;
+      height:300px;
+      right:0px;
+      top:40px;
+      background-color: white;
+      -webkit-box-shadow:0 0 20px rgba(0, 0, 0, 0.78);
+      -moz-box-shadow:0 0 20px rgba(0, 0, 0, 0.78);
+      box-shadow:0 0 20px rgba(0, 0, 0, 0.78);
+      overflow: auto;
+      .inform-container{
+        position: relative;
+        width:380px;
+        margin: 0 auto;
+        .noInformation{
+          position: absolute;
+          width:380px;
+          height:300px;
+          //background-color: #2a6496;
+          line-height: 300px;
+          text-align: center;
+          //display: none;
+        }
+        .count{
+          width:100%;
+          height:40px;
+          line-height: 50px;
+          .ignore-all{
+            cursor: pointer;
+            color: #e23428;
+          }
+          .inform-count{
+            float:right;
+            b{
+              color: #e23428;
+            }
+          }
+        }
+        .inform-list{
+          .inform-list-children{
+            position: relative;
+            overflow: hidden;
+            border-top:1px solid rgba(0, 0, 0, 0.22);
+            &:last-child{
+              border-bottom:1px solid rgba(0, 0, 0, 0.22);
+              maigin-bottom:10px;
+            }
+            .ignore{
+              float: right;
+              color: #e23428;
+              cursor: pointer;
+            }
+            .icon{
+              display: inline-block;
+              width:20px;
+              margin-right:5px;
+              vertical-align: top;
+              color:red;
+              float: left;
+              min-height: 40px;
+              line-height: 40px;
+            }
+            .inform-content{
+              display: inline-block;
+              float: right;
+              width:355px;
+              min-height: 40px;
+              padding-top: 10px;
+              padding-bottom:10px;
+              margin-top:0;
+              b{
+                margin-left:10px;
+                color:red;
+                span{
+                  font-weight: 400;
+                  color:black;
+                }
+              }
+              .inform-time{
+                float:right;
+                display: inline-block;
+                vertical-align: middle;
+              }
+            }
+            .count-time{
+              width:355px;
+              float: right;
+              margin-top:-10px;
+              b{
+                vertical-align: middle;
+                color:red;
+                span{
+                  font-weight: 400;
+                  color:black;
+                }
+              }
+              .inform-time{
+                float:right;
+                display: inline-block;
+                vertical-align: middle;
+              }
+            }
+          }
+        }
+      }
+    }
     .personal-setting{
       position: absolute;
       right:0;
@@ -1030,6 +1137,18 @@ header{
             width:28px;
             height:28px;
           }
+        }
+      }
+      .inform-bell{
+        position: relative;
+        i{
+          position: absolute;
+          width:7px;
+          height:7px;
+          .pic-circle(15px);
+          background-color: red;
+          top:5px;
+          right:5px;
         }
       }
       .active{
@@ -1516,6 +1635,13 @@ header{
               width:100px;
               color:white;
               background-color: #277da0;
+            }
+            .fontCountControl{
+              float: right;
+              color: rgba(255, 255, 255, 0.62);
+              b{
+                color: white;
+              }
             }
           }
         }

@@ -199,19 +199,21 @@ $.fn.navHover = function (hoveredClass,effectClass) {
     },function(){
         myCleanSetTimeOut = setTimeout(function(){
             myHide(hoveredClass,effectClass);
-        },10);
+        },0.1);
     })
 };
 
 $(function(){
     $(".postings-search").addClass("displayNone");
     $(".personal-setting").addClass("displayNone");
+    $(".nav-window .inform").addClass("displayNone");
     $(".operation-ul li:eq(0)").navHover(".operation-ul li:eq(0)",".postings-search");
     $(".postings-search").navHover(".operation-ul li:eq(0)",".postings-search");
+    $(".operation-ul li:eq(2)").navHover(".operation-ul li:eq(2)",".nav-window .inform");
+    $(".nav-window .inform").navHover(".operation-ul li:eq(2)",".nav-window .inform");
     $(".operation-ul li:eq(3)").navHover(".operation-ul li:eq(3)",".personal-setting");
     $(".personal-setting").navHover(".operation-ul li:eq(3)",".personal-setting");
 });
-
 
 
 
@@ -285,6 +287,8 @@ function userInformation(){
             yemianchushi();  //调用初始化页面方法
         }
     });
+    /*通知*/
+    Tongzhi();
 }
 
 /*用户登录方法*/
@@ -1013,7 +1017,7 @@ function HeadFormUpload(){
     });
 }
 
-/*检测还可以输入字符数方法*/
+/*检测还可以输入字符数方法->发帖*/
 $.fn.checkLength = function(maxInputLength,Color,changeColor){
     $(this).bind('input propertychange ',function(){
         // var myColor = $(this).parent("td").children("span").children("i").css("color");
@@ -1026,6 +1030,21 @@ $.fn.checkLength = function(maxInputLength,Color,changeColor){
             $(this).parent("td").children("span").children("b").css("color",changeColor);
         }else{
             $(this).parent("td").children("span").children("b").css("color",Color);
+        }
+    } );
+};
+
+/*检测还可以输入字符数方法->回帖*/
+$.fn.checkLengthMessage = function(maxInputLength,Color,changeColor){
+    $(this).bind('input propertychange ',function(){
+        var length = $(this).val().length;
+        var surplusLength = maxInputLength - length;
+        $(this).parents(".message-container").find(".fontCountControl").children("b").html(surplusLength);
+        /*颜色变换*/
+        if(surplusLength < 10){
+            $(this).parents(".message-container").find(".fontCountControl").children("b").css("color",changeColor);
+        }else{
+            $(this).parents(".message-container").find(".fontCountControl").children("b").css("color",Color);
         }
     } );
 };
@@ -1122,10 +1141,9 @@ function gentieContent(){
     });
 }
 
-
-
 /*回复帖子*/
 function huifu(){
+    $(".message .content .leave-message-container .message-container .message-area").checkLengthMessage(200,"white","red");
     $("#message").click(function(){
         if(yemianchushi()==false){ //查询是否应登录
             alert("发帖请先进行登录");
@@ -1247,6 +1265,8 @@ function gentieShow(){
 
 /*楼层中回复帖子事件*/
 function thisFloorBtnClick(){
+    /*输入框字数剩余*/
+    $(".huitie .message-container .huitieContainer").checkLengthMessage(200,"black","red");
     var thisFloor; //被回复楼层
     $(".section-floor .messag").click(function(){
         if(yemianchushi()==false){ //查询是否应登录
@@ -1320,13 +1340,79 @@ function FloorHuifu(){
 
 /*通知查询*/
 function Tongzhi(){
+    /*通知条目查询*/
+    $.ajax({
+        url:"../php/tongzhiCount.php",
+        success:function(data){
+            $(".inform-container .count b").html(data);
+        },
+        error:function(data){
+            alert("出错");
+            alert(data);
+        }
+    });
+    /*通知内容查询*/
     $.ajax({
         url:"../php/tongzhiSelect.php",
         type:"post",
         dataType:"JSON",
         success:function(data){
+            $(".inform-container .inform-list").html("");
             for(var name in data){
-                //alert(data[name].tongzhiId);
+                var tongzhiList = $('<div class="inform-list-children">\
+                    <i class="glyphicon glyphicon-star icon"></i><p class="inform-content"><a href="ziye/thread.html?'+data[name].tieziId+'">'+data[name].tieziTitle+'</a><span class="ignore">忽略</span></p>\
+                <p class="count-time"><b>'+data[name].tieziAnswer+'<span>条新回复</span></b><i class="tieziId displayNone">'+data[name].tieziId+'</i><span class="inform-time">'+data[name].tieziLastAnswerDate+'</span></p>\
+                </div>');
+                tongzhiList.appendTo($(".inform-container .inform-list"));
+            }
+            /*忽略单条通知*/
+            var tieZiId = parseInt($(".inform-list-children .count-time .tieziId").html());
+            $(".inform-list-children .ignore").click(function(){
+                $.ajax({
+                    url:"../php/tongzhiDelete.php",
+                    data:{
+                        tieziId:tieZiId,
+                    },
+                    type:"POST",
+                    success:function(data){
+                        if(data=="success"){
+                            //alert("忽略成功");
+                            Tongzhi(); //回调通知函数。
+                        }else{
+                            alert("进去但有错");
+                            alert(data);
+                        }
+                    },
+                    error:function(data){
+                        alert(data);
+                    }
+                })
+            });
+            /*忽略全部通知*/
+            $(".inform-container .count .ignore-all").click(function(){
+                $.ajax({
+                    url:"../php/tongzhiDeleteAll.php",
+                    success:function(data){
+                        if(data=="success"){
+                            Tongzhi(); //回调通知函数。
+                            //alert("成功");
+                        }else{
+                            alert("失败");
+                            alert(data);
+                        }
+                    },
+                    error:function(data){
+                        alert(data);
+                    }
+                })
+            });
+            /*检测通知栏是否有内容。*/
+            if($(".inform-container .inform-list").html().length<1){
+                $(".noInformation").show();
+                $(".inform-bell i").hide();
+            }else{
+                $(".noInformation").hide();
+                $(".inform-bell i").show();
             }
         }
     });
@@ -1405,6 +1491,5 @@ $(function(){
     huifu();
     /*楼中楼回复*/
     FloorHuifu();
-    /*通知*/
-    Tongzhi();
+
 });
