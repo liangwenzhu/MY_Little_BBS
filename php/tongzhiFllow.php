@@ -66,8 +66,5 @@ if($tongzhiIsExitsRow < 1 ){
         }
     }
 }
-
-
-
     mysql_close($con);
 ?>

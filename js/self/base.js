@@ -902,7 +902,6 @@ function shiJianWeituo(){
         tieziDelete(e);
     });
     /*****帖子管理事件委托结束*****/
-
 }
 
 /*帖子刷新*/
