@@ -1069,7 +1069,7 @@ function mao(){
     }
 }
 
-/*thread.html帖子查询*/
+/*thread.html主帖子查询*/
 function gentieContent(){
     var str=location.href;
     var tieziId;

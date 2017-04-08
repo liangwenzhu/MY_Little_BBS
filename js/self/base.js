@@ -470,7 +470,9 @@ function tieziShow(){
                 if(pageNum>=maxPageShowNumb){
                     for(var i=2;i<=maxPageShowNumb;i++){
                         var li = $('<li>'+i+'</li>');
+						//alert(i);
                         li.appendTo($(".bbs-pagination ul"));
+						
                     }
                 }
                 /*省略页数*/

@@ -1,0 +1,235 @@
+.background-size-cover {
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+.cursor-default {
+  cursor: default;
+}
+/*输入框输错*/
+/*模态动画*/
+@keyframes slide-topTobottom {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slide-topTobottom {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@-moz-keyframes slide-topTobottom {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@-o-keyframes slide-topTobottom {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.slide-topTobottom {
+  -webkit-animation: slide-topTobottom 0.6s ease 0s forwards;
+  -moz-animation: slide-topTobottom 0.6s ease 0s forwards;
+  -ms-animation: slide-topTobottom 0.6s ease 0s forwards;
+  -o-animation: slide-topTobottom 0.6s ease 0s forwards;
+  animation: slide-topTobottom 0.6s ease 0s forwards;
+}
+@keyframes showOut {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes showOut {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@-moz-keyframes showOut {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@-o-keyframes showOut {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.modelShowOut {
+  -webkit-animation: showOut 0.4s ease 0s forwards;
+  -moz-animation: showOut 0.4s ease 0s forwards;
+  -ms-animation: showOut 0.4s ease 0s forwards;
+  -o-animation: showOut 0.4s ease 0s forwards;
+  animation: showOut 0.4s ease 0s forwards;
+}
+.modelShowIn {
+  -webkit-animation: showIn 0.3s cubic-bezier(0.83, 1.68, 0.26, 0.85) 0.1s forwards;
+  -moz-animation: showIn 0.3s cubic-bezier(0.83, 1.68, 0.26, 0.85) 0.1s forwards;
+  -ms-animation: showIn 0.3s cubic-bezier(0.83, 1.68, 0.26, 0.85) 0.1s forwards;
+  -o-animation: showIn 0.3s cubic-bezier(0.83, 1.68, 0.26, 0.85) 0.1s forwards;
+  animation: showIn 0.3s cubic-bezier(0.83, 1.68, 0.26, 0.85) 0.1s forwards;
+}
+@keyframes wrongInput {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes wrongInput {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+}
+@-moz-keyframes wrongInput {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+}
+@-o-keyframes wrongInput {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+}
+.wrongInput {
+  -webkit-animation: wrongInput 4s cubic-bezier(0.15, 4, 0.26, 0.85) 0.1s forwards;
+  -moz-animation: wrongInput 4s cubic-bezier(0.15, 4, 0.26, 0.85) 0.1s forwards;
+  -ms-animation: wrongInput 4s cubic-bezier(0.15, 4, 0.26, 0.85) 0.1s forwards;
+  -o-animation: wrongInput 4s cubic-bezier(0.15, 4, 0.26, 0.85) 0.1s forwards;
+  animation: wrongInput 4s cubic-bezier(0.15, 4, 0.26, 0.85) 0.1s forwards;
+}
+.search-bt-show {
+  opacity: 0;
+  -webkit-animation: logo 0.8s cubic-bezier(0.83, 1.68, 0.26, 0.85) 0.2s forwards;
+  -moz-animation: logo 0.8s cubic-bezier(0.83, 1.68, 0.26, 0.85) 0.2s forwards;
+  -ms-animation: logo 0.8s cubic-bezier(0.83, 1.68, 0.26, 0.85) 0.2s forwards;
+  -o-animation: logo 0.8s cubic-bezier(0.83, 1.68, 0.26, 0.85) 0.2s forwards;
+  animation: logo 0.8s cubic-bezier(0.83, 1.68, 0.26, 0.85) 0.2s forwards;
+}
+.search-bt-fade {
+  opacity: 0;
+  -webkit-animation: logo 0.8s cubic-bezier(0.83, 1.68, 0.26, 0.85) 0.2s forwards;
+  -moz-animation: logo 0.8s cubic-bezier(0.83, 1.68, 0.26, 0.85) 0.2s forwards;
+  -ms-animation: logo 0.8s cubic-bezier(0.83, 1.68, 0.26, 0.85) 0.2s forwards;
+  -o-animation: logo 0.8s cubic-bezier(0.83, 1.68, 0.26, 0.85) 0.2s forwards;
+  animation: logo 0.8s cubic-bezier(0.83, 1.68, 0.26, 0.85) 0.2s forwards;
+}
+.hidden {
+  overflow: hidden;
+}
+.Hidden {
+  opacity: 1;
+}
+.invisible {
+  opacity: 0;
+}
+.displayNone {
+  display: none;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: none;
+}
+.btn:hover {
+  opacity: 0.95;
+}
+.mobil {
+  display: none;
+}
+body {
+  position: relative;
+  width: 1200px;
+  font-family: "Microsoft YaHei", "黑体", "宋体", sans-serif;
+  background: url(../../imgs/bg-2.jpg);
+  background-size: cover;
+  font-size: 16px;
+  margin: 0 auto;
+}
+li {
+  list-style-type: none;
+}
