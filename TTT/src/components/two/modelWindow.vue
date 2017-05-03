@@ -30,11 +30,17 @@
                 <transition enter-active-class="modelShowOut" leave-active-class="modelShowIn">
                     <Advantage v-if="modelActive == 'Advantage'"></Advantage>
                 </transition>
+                <!--专家申请-->
                 <transition enter-active-class="modelShowOut" leave-active-class="modelShowIn">
                     <modelExpertRequire v-if="modelActive == 'modelExpertRequire'"></modelExpertRequire>
                 </transition>
+                <!--专家申请成功，待定-->
                 <transition enter-active-class="modelShowOut" leave-active-class="modelShowIn">
                     <modelExpertRequireSuccess v-if="modelActive == 'expertRequireSuccess'"></modelExpertRequireSuccess>
+                </transition>
+                <!--专家社区互动申请-->
+                <transition enter-active-class="modelShowOut" leave-active-class="modelShowIn">
+                    <modelExpertQuestionRequire v-if="modelActive == 'modelExpertQuestionRequire'"></modelExpertQuestionRequire>
                 </transition>
             </div>
         </div>
@@ -51,6 +57,7 @@
     import Advantage from '../three/modelAdvantage.vue';
     import modelExpertRequire from '../three/modelExpertRequire.vue';
     import modelExpertRequireSuccess from '../three/modelExpertRequireSuccess.vue';
+    import modelExpertQuestionRequire from '../three/modelExpertQuestionRequire.vue';
     import '../../../lib/imgs/modal/code-input.png';
     import '../../../lib/imgs/modal/key.png';
     import '../../../lib/imgs/modal/phone.png';
@@ -72,6 +79,7 @@
             Advantage,
             modelExpertRequire,
             modelExpertRequireSuccess,
+            modelExpertQuestionRequire,
         },
         computed:{
             modelShow(){

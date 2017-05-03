@@ -26,10 +26,10 @@
       <file leaf-file-name="modelWindow.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/two/modelWindow.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="36" column="89" selection-start-line="36" selection-start-column="89" selection-end-line="36" selection-end-column="89" />
+            <state relative-caret-position="370">
+              <caret line="42" column="96" selection-start-line="42" selection-start-column="70" selection-end-line="42" selection-end-column="96" />
               <folding>
-                <element signature="e#2403#2447#0" expanded="true" />
+                <element signature="e#2751#2795#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -38,16 +38,24 @@
       <file leaf-file-name="modelExpertRequire.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertRequire.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="59" column="21" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
+            <state relative-caret-position="386">
+              <caret line="106" column="39" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="39" />
               <folding>
-                <element signature="e#1729#1751#0" expanded="false" />
-                <element signature="e#1763#2061#0" expanded="false" />
-                <element signature="e#2099#2215#0" expanded="false" />
-                <element signature="e#2238#3431#0" expanded="false" />
-                <element signature="n#style#0;n#!!top" expanded="false" />
-                <element signature="e#3984#4732#0" expanded="false" />
+                <element signature="e#2632#2662#0" expanded="false" />
+                <element signature="e#2681#3019#0" expanded="false" />
+                <element signature="e#3068#3196#0" expanded="false" />
+                <element signature="e#5117#5865#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modelExpertQuestionRequire.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertQuestionRequire.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="79" column="40" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -55,7 +63,7 @@
       <file leaf-file-name="modelExpertRequireSuccess.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertRequireSuccess.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1320">
+            <state relative-caret-position="490">
               <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
               <folding />
             </state>
@@ -77,24 +85,32 @@
       <file leaf-file-name="expertHeader.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/expert/two/expertHeader.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="164" column="20" selection-start-line="164" selection-start-column="20" selection-end-line="164" selection-end-column="20" />
+            <state relative-caret-position="730">
+              <caret line="147" column="4" selection-start-line="147" selection-start-column="4" selection-end-line="147" selection-end-column="4" />
               <folding>
-                <element signature="n#div#2;n#div#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#4;n#div#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="e#3046#3090#0" expanded="true" />
-                <element signature="e#5117#5454#0" expanded="false" />
-                <element signature="e#5744#6249#0" expanded="false" />
-                <element signature="e#6721#7162#0" expanded="false" />
+                <element signature="n#div#1;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="e#3299#3343#0" expanded="true" />
+                <element signature="e#5712#6217#0" expanded="false" />
+                <element signature="e#6689#7130#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hotExperts.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="declare.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/expert/three/declare.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="30" column="75" selection-start-line="30" selection-start-column="75" selection-end-line="30" selection-end-column="75" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hotExperts.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/expert/three/hotExperts.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
+            <state relative-caret-position="2400">
               <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
               <folding />
             </state>
@@ -104,7 +120,7 @@
       <file leaf-file-name="expertsList.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/expert/four/expertsList.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
+            <state relative-caret-position="150">
               <caret line="5" column="19" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="19" />
               <folding />
             </state>
@@ -116,8 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/three/modelRegisterSuccess.vue" />
-        <option value="$PROJECT_DIR$/src/components/six/optionTr.vue" />
         <option value="$PROJECT_DIR$/src/components/three/header.vue" />
         <option value="$PROJECT_DIR$/src/components/two/Myheader.vue" />
         <option value="$PROJECT_DIR$/src/components/two/myHeader.vue" />
@@ -160,13 +174,15 @@
         <option value="$PROJECT_DIR$/src/components/five/headerBottomList.vue" />
         <option value="$PROJECT_DIR$/src/components/four/headerBottom.vue" />
         <option value="$PROJECT_DIR$/src/components/three/modelAdvantage.vue" />
-        <option value="$PROJECT_DIR$/src/components/two/modelWindow.vue" />
         <option value="$PROJECT_DIR$/src/components/three/modelExpertRequireSuccess.vue" />
-        <option value="$PROJECT_DIR$/src/components/three/modelExpertRequire.vue" />
         <option value="$PROJECT_DIR$/src/components/expert/three/expertsList.vue" />
         <option value="$PROJECT_DIR$/src/components/expert/four/expertsList.vue" />
-        <option value="$PROJECT_DIR$/src/components/expert/two/expertHeader.vue" />
         <option value="$PROJECT_DIR$/src/components/expert/three/hotExperts.vue" />
+        <option value="$PROJECT_DIR$/src/components/three/modelExpertRequire.vue" />
+        <option value="$PROJECT_DIR$/src/components/two/modelWindow.vue" />
+        <option value="$PROJECT_DIR$/src/components/expert/two/expertHeader.vue" />
+        <option value="$PROJECT_DIR$/src/components/expert/three/declare.vue" />
+        <option value="$PROJECT_DIR$/src/components/three/modelExpertQuestionRequire.vue" />
       </list>
     </option>
   </component>
@@ -179,9 +195,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="x" value="7" />
+    <option name="y" value="9" />
+    <option name="width" value="1370" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -321,11 +337,12 @@
       <workItem from="1493047633712" duration="3545000" />
       <workItem from="1493101165135" duration="2967000" />
       <workItem from="1493184638493" duration="12753000" />
+      <workItem from="1493786082120" duration="7556000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="288510000" />
+    <option name="totallyTimeSpent" value="296066000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -337,7 +354,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="7" y="9" width="1370" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -345,7 +362,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3420622" sideWeight="0.5029762" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985073" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.3409894" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" x="-15" y="746" width="2241" height="475" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="true" show_stripe_button="true" weight="0.3409894" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" x="14" y="745" width="2241" height="475" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286219" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -377,28 +394,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/content/tree/mainFloor.vue" />
-    <entry file="file://$PROJECT_DIR$/src/components/five/login.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="32" column="10" selection-start-line="29" selection-start-column="8" selection-end-line="32" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/six/optionTr.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/content/two/middle.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-292">
-          <caret line="5" column="61" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/three/footer.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1033">
@@ -673,43 +668,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/two/modelWindow.vue">
+    <entry file="file://$PROJECT_DIR$/src/components/expert/three/expertsList.vue" />
+    <entry file="file://$PROJECT_DIR$/src/components/expert/four/expertsList.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="36" column="89" selection-start-line="36" selection-start-column="89" selection-end-line="36" selection-end-column="89" />
-          <folding>
-            <element signature="e#2403#2447#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertRequire.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="59" column="21" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
-          <folding>
-            <element signature="e#1729#1751#0" expanded="false" />
-            <element signature="e#1763#2061#0" expanded="false" />
-            <element signature="e#2099#2215#0" expanded="false" />
-            <element signature="e#2238#3431#0" expanded="false" />
-            <element signature="n#style#0;n#!!top" expanded="false" />
-            <element signature="e#3984#4732#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertRequireSuccess.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
+        <state relative-caret-position="150">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/expert/three/expertsList.vue">
+    <entry file="file://$PROJECT_DIR$/src/components/expert/three/hotExperts.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+        <state relative-caret-position="2400">
+          <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/web-forms.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="320" column="16" selection-start-line="320" selection-start-column="16" selection-end-line="320" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -724,33 +703,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/expert/four/expertsList.vue">
+    <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertQuestion.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="19" />
+        <state relative-caret-position="150">
+          <caret line="5" column="47" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="47" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/two/modelWindow.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="42" column="96" selection-start-line="42" selection-start-column="70" selection-end-line="42" selection-end-column="96" />
+          <folding>
+            <element signature="e#2751#2795#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/expert/two/expertHeader.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="164" column="20" selection-start-line="164" selection-start-column="20" selection-end-line="164" selection-end-column="20" />
+        <state relative-caret-position="730">
+          <caret line="147" column="4" selection-start-line="147" selection-start-column="4" selection-end-line="147" selection-end-column="4" />
           <folding>
-            <element signature="n#div#2;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#4;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#3046#3090#0" expanded="true" />
-            <element signature="e#5117#5454#0" expanded="false" />
-            <element signature="e#5744#6249#0" expanded="false" />
-            <element signature="e#6721#7162#0" expanded="false" />
+            <element signature="n#div#1;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#3299#3343#0" expanded="true" />
+            <element signature="e#5712#6217#0" expanded="false" />
+            <element signature="e#6689#7130#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/expert/three/hotExperts.vue">
+    <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertRequire.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="106" column="39" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="39" />
+          <folding>
+            <element signature="e#2632#2662#0" expanded="false" />
+            <element signature="e#2681#3019#0" expanded="false" />
+            <element signature="e#3068#3196#0" expanded="false" />
+            <element signature="e#5117#5865#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/expert/three/declare.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="30" column="75" selection-start-line="30" selection-start-column="75" selection-end-line="30" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertRequireSuccess.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertQuestionRequire.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
-          <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
+          <caret line="79" column="40" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
           <folding />
         </state>
       </provider>

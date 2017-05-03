@@ -5,6 +5,7 @@
           <router-link to="/tieziManage"><li v-bind:class="{active:activeOption == 'tieziManage'}" v-on:click="active('tieziManage')"><span class="glyphicon glyphicon-zoom-in"></span>帖子管理</li></router-link>
           <router-link to="/managerApply"><li v-bind:class="{active:activeOption == 'managerApply'}" v-on:click="active('managerApply')"><span class="glyphicon glyphicon-bookmark"></span>版主管理</li></router-link>
           <router-link to="/expertApply"><li v-bind:class="{active:activeOption == 'expertApply'}" v-on:click="active('expertApply')"><span class="glyphicon glyphicon-bookmark"></span>专家管理</li></router-link>
+          <router-link to="/expertQuestionApply"><li v-bind:class="{active:activeOption == 'expertQuestion'}" v-on:click="active('expertQuestion')"><span class="glyphicon glyphicon-bell"></span>专家问答</li></router-link>
           <router-link to="/jubaoManage"><li v-bind:class="{active:activeOption == 'jubaoManage'}" v-on:click="active('jubaoManage')"><span class="glyphicon glyphicon-bell"></span>举报管理</li></router-link>
           <li><span class="glyphicon glyphicon-file"></span>文章管理</li>
           <li><span class="glyphicon glyphicon-paperclip"></span>资料管理</li>
@@ -78,7 +79,7 @@ export default {
             height:45px;
             line-height: 45px;
             background: rgba(0,0,0,.05);
-            margin-top:100px;
+            //margin-top:100px;
             width:194px;
             padding-left:50px;
             //position: absolute;
