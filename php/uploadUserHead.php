@@ -1,4 +1,5 @@
 <?php
+/*
 if(
         ($_FILES["file"]["type"] !== "image/gif")
     && ($_FILES["file"]["type"] !== "image/jpeg")
@@ -6,7 +7,8 @@ if(
     && ($_FILES["file"]["type"] !== "image/pjpeg")
 ){
     echo "error format";
-}elseif($_FILES["file"]["size"] > 102400){
+}else*/
+	if($_FILES["file"]["size"] > 102400){
             echo "error size";
 }elseif($_FILES["file"]["error"] > 0){
     echo "error";

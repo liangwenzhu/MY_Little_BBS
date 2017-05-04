@@ -3,4 +3,5 @@
     //$a=$_POST['userName'];
     //$_SESSION['username'] = $a;
     echo $_SESSION['username'];
+	echo $_SESSION['userid'];
 ?>

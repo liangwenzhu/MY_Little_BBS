@@ -1299,8 +1299,6 @@ function FloorHuifu(){
                 if(data=="success"){
                     alert("回帖成功");
                     $(".close").trigger("click");
-                    gentieShow();
-                    userInformation();
                     /*插入数据到通知表里*/
                     $.ajax({
                         url:("../php/tongzhiFllow.php"),

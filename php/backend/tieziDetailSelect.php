@@ -4,10 +4,10 @@ include ('conn.php');
 $tieziId = $_POST[tieziId];
 //$sql = "SELECT * from Tiezi
 //        WHERE tieziId = '$tieziId'";
-$sql = "select a.tieziId,a.tieziTitle,a.tieziContent,a.tieziScore,a.tieziCreater,a.tieziCreaterData,a.tieziOverhead,b.userName,b.userSign,b.userHead from 
-(select * from Tiezi )a
-left join
-(select * from Users )b
+$sql = "select a.*,b.userSign,b.userHead from 
+(select * from Tiezi)a
+inner join
+(select * from Users)b
  on a.tieziCreater = b.userName
 WHERE a.tieziId = '$tieziId'";
 $result = mysql_query($sql);

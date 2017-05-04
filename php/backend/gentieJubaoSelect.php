@@ -6,34 +6,21 @@ if (!$con)
 }
 mysql_select_db("my_db", $con);
 
-$tieziId = $_POST[tieziId];
+//$tieziId = $_POST[tieziId];
 
-//$sql = "select * from Gentie
-//order by floorNum asc
-//limit 0,$tiezimaxnum";
-/*
-$sql = "select a.*,b.userSign,b.userHead from 
-(select * from Gentie )a
-left join
-(select * from Users )b
- on a.userName = b.userName
-left JOIN 
-(select tieziId from Tiezi)c
-on a.tieziId = c.tieziId
-WHERE a.tieziId = '$tieziId'
-order by a.gentieId asc";
-*/
 
-$sql = "select a.*,b.userSign,b.userHead from 
+$jubaoType = $_POST[jubaoType];
+
+$sql = "select a.*,b.jubaoType,b.jubaoUserName,b.beijubaoUserName,b.jubaoReason,b.jubaoDate,c.tieziTitle from 
 (select * from Gentie )a
-left join
-(select * from Users )b
- on a.userName = b.userName
-left JOIN 
-(select tieziId from Tiezi)c
+inner join
+(select * from Jubao )b
+on a.gentieId = b.gentieId
+inner JOIN 
+(select * from Tiezi)c
 on a.tieziId = c.tieziId
-WHERE a.tieziId = '$tieziId'
-order by a.gentieId asc";
+WHERE b.jubaoType = '$jubaoType'";
+//order by a.gentieId asc";
 
 
 $result =mysql_query($sql);//执行SQL
@@ -52,8 +39,14 @@ class tiezi
 	public $beigentieUserName;
 	public $dianzanCount;
 	public $caiCount;
-    public $userSign;
-    public $userHead;
+	
+	public $jubaoType;
+	public $jubaoUserName;
+	public $beijubaoUserName;
+	public $jubaoReason;
+	public $jubaoDate;
+	
+	public $tieziTitle;
 }
 while ($row= mysql_fetch_array($result, MYSQL_ASSOC))
 {
@@ -69,8 +62,14 @@ while ($row= mysql_fetch_array($result, MYSQL_ASSOC))
 	$tiezi->beigentieUserName = $row["beigentieUserName"];
 	$tiezi->dianzanCount = $row["dianzanCount"];
 	$tiezi->caiCount = $row["caiCount"];
-    $tiezi->userSign = $row["userSign"];
-    $tiezi->userHead = $row["userHead"];
+	
+	$tiezi->jubaoType = $row["jubaoType"];
+	$tiezi->jubaoUserName = $row["jubaoUserName"];
+	$tiezi->beijubaoUserName = $row["beijubaoUserName"];
+	$tiezi->jubaoReason = $row["jubaoReason"];
+	$tiezi->jubaoDate = $row["jubaoDate"];
+	
+	$tiezi->tieziTitle = $row["tieziTitle"];
     $data[]=$tiezi;
 }
 $json = json_encode($data);//把数据转换为JSON数据.

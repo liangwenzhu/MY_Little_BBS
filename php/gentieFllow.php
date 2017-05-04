@@ -3,10 +3,26 @@ include ('conn.php');
 $tieziId = $_POST[tieziId];
 //$floorNum = $_POST[floorNum];
 $beigentieFloorNum = $_POST[beigentieFloorNum];
+$beiGentieContent = $_POST[beiGentieContent];
+$beiGentieUserName = $_POST[beiGentieUserName];
 $gentieContent = $_POST[gentieContent];
 
 session_start();
 $username = $_SESSION['username'];
+
+/*用户发帖数更新*/	
+$gentieCountSql = "select * from Users WHERE userName = '$username'";
+$gentieCountSqlResult = mysql_query($gentieCountSql,$con);
+
+$gentieCountSqlRow = mysql_fetch_array($gentieCountSqlResult);
+
+$gentieCount = $gentieCountSqlRow['userGentieCount'];
+$gentieCount = $gentieCount + 1;
+
+$usergentieCountUpdateSql = "UPDATE Users 
+set userGentieCount = '$gentieCount'
+where userName = '$username'";
+mysql_query($usergentieCountUpdateSql,$con);
 
 /*积分更新*/
 $scoreSql = "select userScore from Users
@@ -50,7 +66,7 @@ if(!mysql_query($tieziAnswerUpdateSql,$con)){
 }
 
 /*插入新数据到更贴表里*/
-$sql = "insert into Gentie(userName,tieziId,floorNum,gentieContent,gentieCreaterData,beigentieFloorNum) values ('$username','$tieziId','$floorNum','$gentieContent',now(),'$beigentieFloorNum')";
+$sql = "insert into Gentie(userName,tieziId,floorNum,gentieContent,gentieCreaterData,beigentieFloorNum,beigentieContent,beigentieUserName) values ('$username','$tieziId','$floorNum','$gentieContent',now(),'$beigentieFloorNum','$beiGentieContent','$beiGentieUserName')";
 
 if(!mysql_query($sql,$con)){
     die('error: ' . mysql_error());

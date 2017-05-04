@@ -10,6 +10,10 @@ $sql = "CREATE TABLE Gentie(
     gentieContent varchar(1000) NOT NULL,
     gentieCreaterData varchar(50) NOT NULL,
     beigentieFloorNum varchar(15) DEFAULT '1',
+	beigentieContent varchar(1000) NOT NULL,
+	beigentieUserName varchar(50) NOT NULL,
+	dianzanCount varchar(15) DEFAULT '0',
+	caiCount varchar(15) DEFAULT '0',
     PRIMARY KEY (gentieId)
 )";
 if(!mysql_query($sql,$con)){

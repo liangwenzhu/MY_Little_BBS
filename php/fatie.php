@@ -12,6 +12,23 @@ $TieziCreater = $_SESSION['username'];
 
 //$tieziTime = date("y-m-d",time());
 //now()
+
+
+/*用户发帖数更新*/	
+$fatieCountSql = "select * from Users WHERE userName = '$TieziCreater'";
+$fatieCountSqlResult = mysql_query($fatieCountSql,$con);
+
+$fatieCountSqlRow = mysql_fetch_array($fatieCountSqlResult);
+
+$fatieCount = $fatieCountSqlRow['userFatieCount'];
+$fatieCount = $fatieCount + 1;
+
+$userFatieCountUpdateSql = "UPDATE Users 
+set userFatieCount = '$fatieCount'
+where userName = '$TieziCreater'";
+mysql_query($userFatieCountUpdateSql,$con);
+
+/*用户积分更新*/
 $scoreInsert = "UPDATE Users 
 set userScore = '$userScore'
 where userName = '$TieziCreater'";
