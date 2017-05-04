@@ -26,7 +26,7 @@
       <file leaf-file-name="modelWindow.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/two/modelWindow.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
+            <state relative-caret-position="1260">
               <caret line="42" column="96" selection-start-line="42" selection-start-column="70" selection-end-line="42" selection-end-column="96" />
               <folding>
                 <element signature="e#2751#2795#0" expanded="true" />
@@ -38,7 +38,7 @@
       <file leaf-file-name="modelExpertRequire.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertRequire.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
+            <state relative-caret-position="2730">
               <caret line="106" column="39" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="39" />
               <folding>
                 <element signature="e#2632#2662#0" expanded="false" />
@@ -50,11 +50,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modelExpertQuestionRequire.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="modelExpertQuestionRequire.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertQuestionRequire.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
+            <state relative-caret-position="2370">
               <caret line="79" column="40" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bbs-pagination.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/four/bbs-pagination.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="115" column="32" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -63,7 +83,7 @@
       <file leaf-file-name="modelExpertRequireSuccess.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertRequireSuccess.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
+            <state relative-caret-position="1320">
               <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
               <folding />
             </state>
@@ -73,7 +93,7 @@
       <file leaf-file-name="modelLogin.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/three/modelLogin.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
+            <state relative-caret-position="2100">
               <caret line="102" column="14" selection-start-line="70" selection-start-column="12" selection-end-line="102" selection-end-column="14" />
               <folding>
                 <element signature="e#2392#3750#0" expanded="false" />
@@ -85,7 +105,7 @@
       <file leaf-file-name="expertHeader.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/expert/two/expertHeader.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="730">
+            <state relative-caret-position="4020">
               <caret line="147" column="4" selection-start-line="147" selection-start-column="4" selection-end-line="147" selection-end-column="4" />
               <folding>
                 <element signature="n#div#1;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
@@ -100,7 +120,7 @@
       <file leaf-file-name="declare.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/expert/three/declare.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
+            <state relative-caret-position="900">
               <caret line="30" column="75" selection-start-line="30" selection-start-column="75" selection-end-line="30" selection-end-column="75" />
               <folding />
             </state>
@@ -112,16 +132,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2400">
               <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="expertsList.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/expert/four/expertsList.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="5" column="19" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -164,7 +174,6 @@
         <option value="$PROJECT_DIR$/src/components/five/bbs-Table-Tr.vue" />
         <option value="$PROJECT_DIR$/src/components/three/modelLogin.vue" />
         <option value="$PROJECT_DIR$/src/components/three/modelRegister.vue" />
-        <option value="$PROJECT_DIR$/src/App.vue" />
         <option value="$PROJECT_DIR$/src/components/expert/expert.vue" />
         <option value="$PROJECT_DIR$/src/components/six/userInformation.vue" />
         <option value="$PROJECT_DIR$/src/components/six/search.vue" />
@@ -183,6 +192,7 @@
         <option value="$PROJECT_DIR$/src/components/expert/two/expertHeader.vue" />
         <option value="$PROJECT_DIR$/src/components/expert/three/declare.vue" />
         <option value="$PROJECT_DIR$/src/components/three/modelExpertQuestionRequire.vue" />
+        <option value="$PROJECT_DIR$/src/App.vue" />
       </list>
     </option>
   </component>
@@ -195,10 +205,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="7" />
-    <option name="y" value="9" />
-    <option name="width" value="1370" />
-    <option name="height" value="744" />
+    <option name="x" value="1" />
+    <option name="y" value="1" />
+    <option name="width" value="1364" />
+    <option name="height" value="726" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -337,12 +347,13 @@
       <workItem from="1493047633712" duration="3545000" />
       <workItem from="1493101165135" duration="2967000" />
       <workItem from="1493184638493" duration="12753000" />
-      <workItem from="1493786082120" duration="7556000" />
+      <workItem from="1493786082120" duration="9227000" />
+      <workItem from="1493877743140" duration="948000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="296066000" />
+    <option name="totallyTimeSpent" value="298685000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -354,7 +365,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="7" y="9" width="1370" height="744" extended-state="0" />
+    <frame x="1" y="1" width="1364" height="726" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -362,18 +373,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3420622" sideWeight="0.5029762" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985073" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="true" show_stripe_button="true" weight="0.3409894" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" x="14" y="745" width="2241" height="475" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286219" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.3409894" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" x="-28" y="701" width="2241" height="475" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -475,13 +486,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/four/bbs-pagination.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="56" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -605,13 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/expert/expert.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -695,7 +692,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/three/modelLogin.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
+        <state relative-caret-position="2100">
           <caret line="102" column="14" selection-start-line="70" selection-start-column="12" selection-end-line="102" selection-end-column="14" />
           <folding>
             <element signature="e#2392#3750#0" expanded="false" />
@@ -703,17 +700,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertQuestion.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="47" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertQuestion.vue" />
     <entry file="file://$PROJECT_DIR$/src/components/two/modelWindow.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
+        <state relative-caret-position="1260">
           <caret line="42" column="96" selection-start-line="42" selection-start-column="70" selection-end-line="42" selection-end-column="96" />
           <folding>
             <element signature="e#2751#2795#0" expanded="true" />
@@ -723,7 +713,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/expert/two/expertHeader.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="730">
+        <state relative-caret-position="4020">
           <caret line="147" column="4" selection-start-line="147" selection-start-column="4" selection-end-line="147" selection-end-column="4" />
           <folding>
             <element signature="n#div#1;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
@@ -736,7 +726,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertRequire.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
+        <state relative-caret-position="2730">
           <caret line="106" column="39" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="39" />
           <folding>
             <element signature="e#2632#2662#0" expanded="false" />
@@ -749,7 +739,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/expert/three/declare.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
+        <state relative-caret-position="900">
           <caret line="30" column="75" selection-start-line="30" selection-start-column="75" selection-end-line="30" selection-end-column="75" />
           <folding />
         </state>
@@ -757,7 +747,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertRequireSuccess.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
+        <state relative-caret-position="1320">
           <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
           <folding />
         </state>
@@ -765,8 +755,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertQuestionRequire.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
+        <state relative-caret-position="2370">
           <caret line="79" column="40" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/four/bbs-pagination.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="115" column="32" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="32" />
           <folding />
         </state>
       </provider>

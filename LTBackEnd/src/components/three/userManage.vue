@@ -29,22 +29,29 @@
         </div>
         <div class="flex-scroll">
           <userFlexContent v-for="item in userObj" v-bind:item="item" ></userFlexContent>
+          <loading v-show="loading"></loading>
+          <noRecord v-show="ifHasRecord"></noRecord>
         </div>
     </div>
 </template>
 <script>
   import simpleRoDetail from "../four/SimpleRoDeatil.vue"
   import userFlexContent from "../four/userFlexContent.vue"
+  import loading from "../tips/loading.vue"
+  import noRecord from "../tips/noRecord.vue"
     export default {
         data:function(){
             return{
               orderByUserId:true,
               orderByUserScore:true,
+              loading:true,
             }
         },
         components:{
           simpleRoDetail,
-          userFlexContent
+          userFlexContent,
+          loading,
+          noRecord
         },
         computed:{
           userObj(){
@@ -52,6 +59,13 @@
           },
           ifShowDetail(){
             return this.$store.state.ifShowDetail
+          },
+          ifHasRecord(){
+            if(this.loading == false && this.userObj.length == 0){
+              return true
+            }else{
+              return false
+            }
           },
           touxiang(){
             return 'http://localhost:8081/luntan/php/upload/' + this.$store.state.userHead
@@ -137,6 +151,7 @@
             },
             dataType:"JSON",
             success:function(data){
+              that.loading = false;
               that.$store.commit('userObj',data);
             },
             error:function(){

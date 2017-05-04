@@ -23,6 +23,10 @@
           <modelUserDetail v-if="modelActive == 'modelUserDetail'"></modelUserDetail>
           <!--专家详情-->
           <modelExpertDetail v-if="modelActive == 'modelExpertDetail'"></modelExpertDetail>
+          <!--专家问答申请详情-->
+          <modelExpertQuestionRequireDetail v-if="modelActive == 'modelExpertQuestionRequireDetail'"></modelExpertQuestionRequireDetail>
+          <!--专家问答申请编辑详情-->
+          <modelExpertQuestionRequireEditor v-if="modelActive == 'modelExpertQuestionRequireEditor'"></modelExpertQuestionRequireEditor>
         </div>
     </div>
 </template>
@@ -39,6 +43,8 @@ import modelTieziDetail from '../three/modelTieziDetail.vue';
 import modelGentieDetail from '../three/modelGentieDetail.vue';
 import modelUserDetail from '../three/modelUserDetail.vue';
 import modelExpertDetail from '../three/modelExpertDetail.vue';
+import modelExpertQuestionRequireDetail from '../three/modelExpertQuestionRequireDetail.vue';
+import modelExpertQuestionRequireEditor from '../three/modelExpertQuestionRequireEditor.vue';
 import '../../../lib/imgs/modal/code-input.png';
 import '../../../lib/imgs/modal/key.png';
 import '../../../lib/imgs/modal/phone.png';
@@ -61,7 +67,9 @@ export default {
       modelTieziDetail,
       modelGentieDetail,
       modelUserDetail,
-      modelExpertDetail
+      modelExpertDetail,
+      modelExpertQuestionRequireDetail,
+      modelExpertQuestionRequireEditor
     },
 	computed:{
         modelShow(){

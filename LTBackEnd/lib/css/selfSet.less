@@ -204,6 +204,44 @@
   }
 }
 
+
+/*loading*/
+.loading(@y-begin,@y-end,@name){
+  @keyframes @name{
+    0%, 40%, 100% {
+      transform: scaleY(@y-begin);
+    }
+    20% {
+      transform: scaleY(@y-end);
+    }
+  }
+  @-webkit-keyframes @name{
+    0%, 40%, 100% {
+      transform: scaleY(@y-begin);
+    }
+   20% {
+      transform: scaleY(@y-end);
+    }
+  }
+  @-moz-keyframes @name{
+    0%, 40%, 100% {
+      transform: scaleY(@y-begin);
+    }
+    20% {
+      transform: scaleY(@y-end);
+    }
+  }
+  @-o-keyframes @name{
+    0%, 40%, 100% {
+      transform: scaleY(@y-begin);
+    }
+    20% {
+       transform: scaleY(@y-end);
+    }
+  }
+}
+
+
 .animation(@animation-name,@animation-duration,@animation-timing-function,@animation-delay,@play-state){
   -webkit-animation: @arguments;
   -moz-animation: @arguments;
@@ -212,7 +250,32 @@
   animation: @arguments;
 }
 
+.animation2(@animation-name,@animation-duration,@animation-timing-function,@animation-delay,@play-state,@animation-iteration-count){
+  -webkit-animation: @arguments;
+  -moz-animation: @arguments;
+  -ms-animation: @arguments;
+  -o-animation:  @arguments;
+  animation: @arguments;
+}
 
+
+/*loading创建*/
+.loading(0.4,1.0,LoadingFirst);
+.rect1{
+	.animation2(LoadingFirst,1.2s,ease-in-out,0.1s,forwards,infinite);
+}
+.rect2{
+	.animation2(LoadingFirst,1.2s,ease-in-out,0.2s,forwards,infinite);
+}
+.rect3{
+	.animation2(LoadingFirst,1.2s,ease-in-out,0.3s,forwards,infinite);
+}
+.rect4{
+	.animation2(LoadingFirst,1.2s,ease-in-out,0.4s,forwards,infinite);
+}
+.rect5{
+	.animation2(LoadingFirst,1.2s,ease-in-out,0.5s,forwards,infinite);
+}
 .slide-top(30px,0,slide-topTobottom);
 .slide-topTobottom{
   .animation(slide-topTobottom,0.6s,ease,0s,forwards);

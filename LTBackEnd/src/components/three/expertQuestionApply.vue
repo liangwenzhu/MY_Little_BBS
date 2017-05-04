@@ -20,32 +20,45 @@
           <span>序号</span>
           <span>申请账户</span>
           <span>专家姓名</span>
-          <span>问答标题</span>
           <span v-show="ifShowDetail" class="date">申请时间<b class="glyphicon glyphicon-arrow-up"></b></span>
           <span>申请状态</span>
           <span>问答简介</span>
         </div>
         <div class="flex-scroll">
-            <expertQuestionApplyContent v-for="item in manangerObj" v-bind:item="item"></expertQuestionApplyContent>
+          <expertQuestionApplyContent v-for="item in manangerObj" v-bind:item="item"></expertQuestionApplyContent>
+          <loading v-show="loading"></loading>
+          <noRecord v-show="ifHasRecord"></noRecord>
         </div>
     </div>
 </template>
 <script>
   import expertQuestionApplyContent from '../four/expertQuestionApplyContent.vue'
   import simpleRoDetail from "../four/SimpleRoDeatil.vue"
+  import loading from "../tips/loading.vue"
+  import noRecord from "../tips/noRecord.vue"
     export default {
         data:function(){
             return{
-              manangerObj:''
+              manangerObj:'',
+              loading:true,
             }
         },
         components:{
           expertQuestionApplyContent,
-          simpleRoDetail
+          simpleRoDetail,
+          loading,
+          noRecord
         },
         computed:{
           ifShowDetail(){
             return this.$store.state.ifShowDetail
+          },
+          ifHasRecord(){
+            if(this.loading == false && this.manangerObj.length == 0){
+              return true
+            }else{
+              return false
+            }
           }
         },
         methods:{
@@ -58,7 +71,7 @@
           type:"post",
           dataType:"JSON",
           success:function(data){
-            alert(data);
+            that.loading = false,
             that.manangerObj = data;
           },
           error:function(data){
@@ -176,10 +189,11 @@
       }
     }
     .flex-scroll{
-        width:84%;
-        height:68%;
-        overflow: auto;
-        overflow-x: hidden;
+      width:84%;
+      height:68%;
+      overflow: auto;
+      overflow-x: hidden;
+      position: relative;
         .flex-content{
             font-size: 15px;
             width:100%;
@@ -204,5 +218,6 @@
             min-width:150px;
           }
         }
+
     }
 </style>

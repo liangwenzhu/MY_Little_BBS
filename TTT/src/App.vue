@@ -27,6 +27,5 @@ export default {
   /*@import '../lib/css/selfSet.less';*/
 
 #app {
-
 }
 </style>

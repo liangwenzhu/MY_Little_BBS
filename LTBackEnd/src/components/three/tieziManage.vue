@@ -33,18 +33,8 @@
         </div>
         <div class="flex-scroll">
           <tieziManageContent v-for = "item in tieziObj" v-bind:item="item"></tieziManageContent>
-            <!--<div class="flex-content" v-for = "item in tieziObj">-->
-                <!--<span><input type="checkbox"></span>-->
-                <!--<span>{{item.tieziId}}</span>-->
-                <!--<span v-bind:class="{tieziTitle:ifShowDetail == false}">{{item.tieziTitle}}</span>-->
-                <!--<span>{{item.tieziCreater}}</span>-->
-                <!--<span v-show="ifShowDetail">{{item.tieziCreaterData}}</span>-->
-                <!--<span >{{item.tieziOverhead}}</span>-->
-                <!--<span v-show="ifShowDetail">{{item.tieziLastAnswer}}</span>-->
-                <!--<span v-show="ifShowDetail">{{item.tieziLastAnswerDate}}</span>-->
-                <!--<span v-show="ifShowDetail">{{item.tieziScore}}</span>-->
-                <!--<span>{{item.tieziAnswer}}</span>-->
-            <!--</div>-->
+          <loading v-show="loading"></loading>
+          <noRecord v-show="ifHasRecord"></noRecord>
         </div>
         </div>
     </div>
@@ -52,15 +42,20 @@
 <script>
   import simpleRoDetail from "../four/SimpleRoDeatil.vue"
   import tieziManageContent from "../four/tieziManageContent.vue"
+  import loading from "../tips/loading.vue"
+  import noRecord from "../tips/noRecord.vue"
     export default {
         data:function(){
             return{
-              count:''
+              count:'',
+              loading:true,
             }
         },
         components:{
           simpleRoDetail,
-          tieziManageContent
+          tieziManageContent,
+          loading,
+          noRecord
         },
         computed:{
             tieziObj(){
@@ -68,7 +63,14 @@
             },
             ifShowDetail(){
                 return this.$store.state.ifShowDetail
+            },
+          ifHasRecord(){
+            if(this.loading == false && this.tieziObj.length == 0){
+              return true
+            }else{
+              return false
             }
+          }
         },
         methods:{
 
@@ -89,7 +91,7 @@
                 type:"post",
                 dataType:"JSON",
                 success:function(data){
-                    //alert(data);
+                    that.loading = false;
                     that.$store.commit('tieziObj',data);
                 },
                 error:function(){

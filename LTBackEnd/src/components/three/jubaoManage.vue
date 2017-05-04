@@ -45,26 +45,6 @@
         methods:{
 
         },
-//        created(){
-//            var that = this;
-//            /*分页数据构建*/
-//            $.ajax({
-//                url:"php/backend/jubaoSelect.php",
-//                data:{
-//                },
-//                type:"post",
-//                dataType:"JSON",
-//                success:function(data){
-//                  that.jubaoObj = data;
-//                    //that.$store.commit('tieziObj',data);
-//                },
-//                error:function(data){
-//                  alert(data);
-//                    alert("失败");
-//                }
-//            });
-//        },
-        // props:['message']
     }
 </script>
 <style lang="less" rel="stylesheet/less" type="text/css" scoped>

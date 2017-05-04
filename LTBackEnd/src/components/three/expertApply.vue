@@ -31,25 +31,39 @@
         </div>
         <div class="flex-scroll">
             <expertManagerApplyContent v-for="item in manangerObj" v-bind:item="item"></expertManagerApplyContent>
+          <loading v-show="loading"></loading>
+          <noRecord v-show="ifHasRecord"></noRecord>
         </div>
     </div>
 </template>
 <script>
   import expertManagerApplyContent from '../four/expertManagerApplyContent.vue'
   import simpleRoDetail from "../four/SimpleRoDeatil.vue"
+  import loading from "../tips/loading.vue"
+  import noRecord from "../tips/noRecord.vue"
     export default {
         data:function(){
             return{
-              manangerObj:''
+              manangerObj:'',
+              loading:true,
             }
         },
         components:{
           expertManagerApplyContent,
-          simpleRoDetail
+          simpleRoDetail,
+          loading,
+          noRecord
         },
         computed:{
           ifShowDetail(){
             return this.$store.state.ifShowDetail
+          },
+          ifHasRecord(){
+            if(this.loading == false && this.manangerObj.length == 0){
+              return true
+            }else{
+              return false
+            }
           }
         },
         methods:{
@@ -62,7 +76,7 @@
           type:"post",
           dataType:"JSON",
           success:function(data){
-            //alert(data);
+            that.loading = false;
             that.manangerObj = data;
           },
           error:function(data){

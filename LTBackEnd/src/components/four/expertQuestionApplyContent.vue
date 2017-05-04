@@ -3,10 +3,9 @@
     <span>索引值</span>
     <span class="pointer" v-on:click="userDetailShow">{{item.userName}}</span>
     <span class="pointer">{{item.relName}}</span>
-    <span class="pointer">点击查看</span>
     <span class="date" v-show="ifShowDetail">{{item.questionRequireTime}}</span>
     <span>{{item.questionRequireStatus}}</span>
-    <span class="pointer" v-on:click="modelExpertDetailShow">点击查看</span>
+    <span class="pointer" v-on:click="modelExpertQuestionRequireDetailShow">点击查看</span>
   </div>
 </template>
 <script>
@@ -28,12 +27,14 @@ export default {
       }
     },
 	methods:{
-    modelExpertDetailShow(){
-      this.$store.commit('managerData',this.item);
+      //专家申请详情
+    modelExpertQuestionRequireDetailShow(){
+      //将该轮所有数据传给vuex。
+      this.$store.commit('expertQuestionRequireObj',this.item);
       this.$store.commit({
         type:'modelWindow',
         modelShow:true,
-        modelActive:'modelExpertDetail'
+        modelActive:'modelExpertQuestionRequireDetail'
       })
     },
 //    用户详情

@@ -28,6 +28,8 @@ const store = new Vuex.Store({
 	gentieData:'',
 	/*用户详情数据*/
 	userData:'',
+	/*专家问答申请数据对象*/
+	expertQuestionRequireObj:'',
   },
   
   mutations: {
@@ -69,6 +71,10 @@ const store = new Vuex.Store({
 	userData(state,dataObj){
 		state.userData = dataObj;
 	},
+	/*专家问答请求数据对象*/
+	expertQuestionRequireObj(state,dataObj){
+		state.expertQuestionRequireObj = dataObj;
+	}
   }
 })
 export default store;

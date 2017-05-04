@@ -20,6 +20,8 @@
         </div>
         <div class="flex-scroll">
           <jubaoManageContent v-for = "item in jubaoObj" v-bind:item="item"></jubaoManageContent>
+          <loading v-show="loading"></loading>
+          <noRecord v-show="ifHasRecord"></noRecord>
         </div>
 
     </div>
@@ -27,16 +29,21 @@
 <script>
   import simpleRoDetail from "../four/SimpleRoDeatil.vue"
   import jubaoManageContent from "../four/jubaoManageContent.vue"
+  import loading from "../tips/loading.vue"
+  import noRecord from "../tips/noRecord.vue"
     export default {
         data:function(){
             return{
               count:'',
-              jubaoObj:''
+              jubaoObj:'',
+              loading:true,
             }
         },
         components:{
           simpleRoDetail,
-          jubaoManageContent
+          jubaoManageContent,
+          loading,
+          noRecord
         },
         computed:{
             tieziObj(){
@@ -44,7 +51,14 @@
             },
             ifShowDetail(){
                 return this.$store.state.ifShowDetail
+            },
+          ifHasRecord(){
+            if(this.loading == false && this.jubaoObj.length == 0){
+              return true
+            }else{
+              return false
             }
+          }
         },
         methods:{
 
@@ -61,6 +75,7 @@
                 type:"post",
                 dataType:"JSON",
                 success:function(data){
+                  that.loading = false,
                   that.jubaoObj = data;
                     //that.$store.commit('tieziObj',data);
                 },
