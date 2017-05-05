@@ -35,7 +35,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modelExpertQuestionRequireEditor.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="modelExpertQuestionRequireEditor.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertQuestionRequireEditor.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
@@ -48,8 +48,8 @@
       <file leaf-file-name="modelExpertQuestionRequireDetail.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertQuestionRequireDetail.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1340">
-              <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+            <state relative-caret-position="420">
+              <caret line="14" column="60" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -58,8 +58,8 @@
       <file leaf-file-name="expertQuestionApplyContent.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/four/expertQuestionApplyContent.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="868">
-              <caret line="32" column="63" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="63" />
+            <state relative-caret-position="210">
+              <caret line="7" column="78" selection-start-line="7" selection-start-column="78" selection-end-line="7" selection-end-column="78" />
               <folding>
                 <element signature="e#1044#1556#0" expanded="false" />
               </folding>
@@ -75,6 +75,28 @@
               <folding>
                 <element signature="e#1273#1352#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userManage.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/three/userManage.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="142">
+              <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+              <folding>
+                <element signature="e#1626#1681#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loading.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/tips/loading.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1710">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -130,8 +152,8 @@
         <option value="$PROJECT_DIR$/src/components/three/expertQuestionApply.vue" />
         <option value="$PROJECT_DIR$/src/components/two/modelWindow.vue" />
         <option value="$PROJECT_DIR$/src/components/three/modelExpertQuestionRequireDetail.vue" />
-        <option value="$PROJECT_DIR$/src/components/four/expertQuestionApplyContent.vue" />
         <option value="$PROJECT_DIR$/src/components/three/modelExpertQuestionRequireEditor.vue" />
+        <option value="$PROJECT_DIR$/src/components/four/expertQuestionApplyContent.vue" />
       </list>
     </option>
   </component>
@@ -144,8 +166,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-26" />
-    <option name="y" value="25" />
+    <option name="x" value="-22" />
+    <option name="y" value="24" />
     <option name="width" value="1364" />
     <option name="height" value="726" />
   </component>
@@ -268,15 +290,15 @@
       <workItem from="1493101254965" duration="7119000" />
       <workItem from="1493180884243" duration="12787000" />
       <workItem from="1493785867733" duration="11645000" />
-      <workItem from="1493877726678" duration="17313000" />
+      <workItem from="1493877726678" duration="17726000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158130000" />
+    <option name="totallyTimeSpent" value="158543000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-26" y="25" width="1364" height="726" extended-state="0" />
+    <frame x="-22" y="24" width="1364" height="726" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -316,7 +338,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/four/table-content.vue" />
     <entry file="file://$PROJECT_DIR$/src/components/four/contentHead.vue" />
     <entry file="file://$PROJECT_DIR$/src/components/two/mainContent.vue" />
     <entry file="file://$PROJECT_DIR$/src/components/three/userManage/table2.vue" />
@@ -558,14 +579,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/three/userManage.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/three/tieziManage.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1890">
@@ -604,28 +617,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertQuestionRequireEditor.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="191" column="16" selection-start-line="191" selection-start-column="16" selection-end-line="191" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertQuestionRequireDetail.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1340">
-          <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+        <state relative-caret-position="420">
+          <caret line="14" column="60" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/four/expertQuestionApplyContent.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="868">
-          <caret line="32" column="63" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="63" />
+        <state relative-caret-position="210">
+          <caret line="7" column="78" selection-start-line="7" selection-start-column="78" selection-end-line="7" selection-end-column="78" />
           <folding>
             <element signature="e#1044#1556#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertQuestionRequireEditor.vue">
+    <entry file="file://$PROJECT_DIR$/src/components/three/userManage.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="191" column="16" selection-start-line="191" selection-start-column="16" selection-end-line="191" selection-end-column="16" />
+        <state relative-caret-position="142">
+          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+          <folding>
+            <element signature="e#1626#1681#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/tips/loading.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1710">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

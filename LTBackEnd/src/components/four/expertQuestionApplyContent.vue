@@ -5,7 +5,7 @@
     <span class="pointer">{{item.relName}}</span>
     <span class="date" v-show="ifShowDetail">{{item.questionRequireTime}}</span>
     <span>{{item.questionRequireStatus}}</span>
-    <span class="pointer" v-on:click="modelExpertQuestionRequireDetailShow">点击查看</span>
+    <span class="pointer" v-on:click="modelExpertQuestionRequireDetailShow">点击操作</span>
   </div>
 </template>
 <script>

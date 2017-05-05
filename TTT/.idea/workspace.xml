@@ -63,7 +63,7 @@
       <file leaf-file-name="App.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
+            <state relative-caret-position="690">
               <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding />
             </state>
@@ -348,12 +348,13 @@
       <workItem from="1493101165135" duration="2967000" />
       <workItem from="1493184638493" duration="12753000" />
       <workItem from="1493786082120" duration="9227000" />
-      <workItem from="1493877743140" duration="948000" />
+      <workItem from="1493877743140" duration="1371000" />
+      <workItem from="1493959282414" duration="26000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="298685000" />
+    <option name="totallyTimeSpent" value="299134000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -670,7 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="5" column="19" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -763,7 +763,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
+        <state relative-caret-position="690">
           <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding />
         </state>
