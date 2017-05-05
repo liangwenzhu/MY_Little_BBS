@@ -11,7 +11,7 @@ session_start();
 $username = $_SESSION['username'];
 $userid = $_SESSION['userid'];
 $expertId = '';
-$select = "select userId from ExpertQuestionRequire where userId ='$userid'";
+$select = "select userId from ExpertQuestionRequire where userId ='$userid' and questionRequireStatus='waiting'";
 $selectResult = mysql_query($select,$con);
 $selectResultRow = mysql_num_rows($selectResult);
 if($selectResultRow > 0){

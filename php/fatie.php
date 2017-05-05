@@ -9,7 +9,7 @@ $tieziSection = $_POST[tieziSection];
 $tieziScore = $_POST[tieziScore];
 $userScore = $_POST[userScore];
 $TieziCreater = $_SESSION['username'];
-
+$TieziCreaterUserId = $_SESSION['userid'];
 //$tieziTime = date("y-m-d",time());
 //now()
 
@@ -34,8 +34,8 @@ set userScore = '$userScore'
 where userName = '$TieziCreater'";
 mysql_query($scoreInsert,$con);
 
-$sql = "insert into Tiezi(tieziTitle,tieziContent,tieziTag,tieziSection,tieziScore,tieziCreater,tieziCreaterData) 
-                    values ('$tieziTitle','$tieziContent','$tieziTag','$tieziSection','$tieziScore','$TieziCreater',now())";
+$sql = "insert into Tiezi(tieziTitle,tieziContent,tieziTag,tieziSection,tieziScore,tieziCreater,tieziCreaterUserId,tieziCreaterData) 
+                    values ('$tieziTitle','$tieziContent','$tieziTag','$tieziSection','$tieziScore','$TieziCreater','$TieziCreaterUserId',now())";
 if(!mysql_query($sql,$con)){
     die('error: ' . mysql_error());
 }else{
