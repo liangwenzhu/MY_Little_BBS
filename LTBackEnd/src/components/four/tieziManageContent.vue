@@ -1,6 +1,6 @@
 <template>
   <div class="flex-content" v-bind:class="{light:item.tieziOverhead == 1}">
-    <span><input type="checkbox"></span>
+    <span>{{Index}}</span>
     <span >{{item.tieziId}}</span>
     <span class="pointer" v-bind:class="{tieziTitle:ifShowDetail == false}" v-on:click="tieziDetailShow">{{item.tieziTitle}}</span>
     <span class="pointer" v-on:click="userDetailShow">{{item.tieziCreater}}</span>
@@ -16,7 +16,10 @@
 //import aaa from '../seven/inform-bottom.vue'
 
 export default {
-  props:['item'],
+  props:{
+    item:'',
+    index:''
+  },
     data:function(){
         return{
 
@@ -26,6 +29,9 @@ export default {
         //aaa,
     },
 	computed:{
+    Index(){
+      return this.index +1
+    },
     ifShowDetail(){
       return this.$store.state.ifShowDetail
     },

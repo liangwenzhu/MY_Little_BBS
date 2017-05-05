@@ -9,7 +9,7 @@
         </div>
 
         <div class="flex-title">
-            <span>选定</span>
+            <span>序号</span>
             <span>被举报帖子ID</span>
             <span>被举报用户</span>
             <span v-show="ifShowDetail" class="date">帖子创建日期</span>
@@ -20,7 +20,7 @@
         </div>
         <div class="flex-scroll">
           <!--<TieziJubaoManageContent></TieziJubaoManageContent>-->
-          <TieziJubaoManageContent v-for = "item in TieziJubaoObj" v-bind:item="item"></TieziJubaoManageContent>
+          <TieziJubaoManageContent v-for = "(item,index) in TieziJubaoObj" v-bind:item="item" v-bind:index="index"></TieziJubaoManageContent>
           <loading v-show="loading"></loading>
           <noRecord v-show="ifHasRecord"></noRecord>
         </div>

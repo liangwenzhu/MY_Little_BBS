@@ -28,7 +28,7 @@
             <span v-show="ifShowDetail">被赞数</span>
         </div>
         <div class="flex-scroll">
-          <userFlexContent v-for="item in userObj" v-bind:item="item" ></userFlexContent>
+          <userFlexContent v-for="(item,index) in userObj" v-bind:item="item" v-bind:index="index"></userFlexContent>
           <loading v-show="loading"></loading>
           <noRecord v-show="ifHasRecord"></noRecord>
         </div>

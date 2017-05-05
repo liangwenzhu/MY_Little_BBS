@@ -70,7 +70,7 @@
               <dd><textarea class="form-control" v-model="advantage"></textarea></dd>
             </dl>
             <button class="btn" v-on:click="store">保存修改</button>
-            <button class="btn keep">通过审核，发布</button>
+            <button class="btn keep" v-on:click="questionRequirePush">通过审核，发布</button>
           </div>
         </div>
     </div>
@@ -206,6 +206,48 @@ export default {
         }
       });
     },
+    questionRequirePush(){
+      var that = this;
+      var expertId = this.managerData.expertId;
+      var userId = this.managerData.userId;
+      var questionRequireId = this.managerData.questionRequireId;
+      var questionRequireStatus = "pushed";
+      //新建一个帖子，以下是帖子表所需要的字段。
+      var tieziTitle = this.managerData.questionTitle;
+      var tieziContent = this.managerData.questionIntroduce;
+      var tieziCreater = this.managerData.userName;
+      var tieziCreaterUserId = this.managerData.userId;
+      var tieziSection = "expert";
+      $.ajax({
+        url:"php/backend/expertQuestionRequireManagerConfirm.php",
+        type: "POST",
+        data: {
+          expertId:expertId,
+          userId:userId,
+          questionRequireId:questionRequireId,
+          questionRequireStatus:questionRequireStatus,
+          tieziTitle:tieziTitle,
+          tieziContent:tieziContent,
+          tieziCreater:tieziCreater,
+          tieziCreaterUserId:tieziCreaterUserId,
+          tieziSection:tieziSection
+        },
+        dataType: "text",
+        success: function (data) {
+          if (data == "success") {
+            alert("发帖成功，恭喜获得积分奖励");
+
+          }else if(data == "exit") {
+            alert("该问答是已发布状态");
+          }else{
+            alert(data)
+          }
+        },
+        error:function(data){
+          alert("专家问答确认出错")
+        }
+      });
+    }
     },
     // props:['message']
 }

@@ -9,7 +9,7 @@
         </div>
 
         <div class="flex-title">
-            <span>选定</span>
+            <span>序号</span>
             <span>所在帖子ID</span>
             <span >被举报跟帖ID</span>
             <span>被举报用户</span>
@@ -19,7 +19,7 @@
             <span v-show="ifShowDetail" class="date">举报时间<b class="glyphicon glyphicon-arrow-up"></b></span>
         </div>
         <div class="flex-scroll">
-          <jubaoManageContent v-for = "item in jubaoObj" v-bind:item="item"></jubaoManageContent>
+          <jubaoManageContent v-for = "(item,index) in jubaoObj" v-bind:item="item" v-bind:index="index"></jubaoManageContent>
           <loading v-show="loading"></loading>
           <noRecord v-show="ifHasRecord"></noRecord>
         </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="flex-content" >
-    <span>索引值</span>
+    <span>{{Index}}</span>
     <span class="pointer" v-on:click="userDetailShow">{{item.userName}}</span>
     <span>{{item.relName}}</span>
     <span>{{item.major}}</span>
@@ -15,7 +15,10 @@
 //import aaa from '../seven/inform-bottom.vue'
 
 export default {
-  props:['item'],
+  props:{
+    item:'',
+    index:''
+  },
     data:function(){
         return{
 
@@ -27,7 +30,10 @@ export default {
 	computed:{
     ifShowDetail(){
       return this.$store.state.ifShowDetail
-      }
+      },
+    Index(){
+        return this.index +1
+    }
     },
 	methods:{
     modelExpertDetailShow(){

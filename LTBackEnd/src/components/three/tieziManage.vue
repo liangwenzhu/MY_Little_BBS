@@ -20,7 +20,7 @@
         </div>
 
         <div class="flex-title">
-            <span>选定</span>
+            <span>序号</span>
             <span>帖子ID</span>
             <span v-bind:class="{tieziTitle:ifShowDetail == false}">帖子名</span>
             <span>创建人</span>
@@ -32,7 +32,7 @@
             <span>留言数</span>
         </div>
         <div class="flex-scroll">
-          <tieziManageContent v-for = "item in tieziObj" v-bind:item="item"></tieziManageContent>
+          <tieziManageContent v-for = "(item,index) in tieziObj" v-bind:item="item" v-bind:index="index"></tieziManageContent>
           <loading v-show="loading"></loading>
           <noRecord v-show="ifHasRecord"></noRecord>
         </div>

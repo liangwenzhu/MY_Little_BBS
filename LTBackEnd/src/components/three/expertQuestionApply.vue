@@ -10,12 +10,12 @@
             </div>
         </div>
         <div class="introduce">
-            <span>专家问答汇总</span>
-            <span class="active">专家问答申请汇总</span>
+          <span class="active">已发布的专家问答</span>
+          <span>待发布的专家问答</span>
+          <span class="active">申请中的专家问答</span>
           <simpleRoDetail></simpleRoDetail>
             <b class="loadCount">已全部加载，共<b class="count">{{manangerObj.length}}</b>条记录</b>
         </div>
-
         <div class="flex-title">
           <span>序号</span>
           <span>申请账户</span>
@@ -25,7 +25,7 @@
           <span>问答简介</span>
         </div>
         <div class="flex-scroll">
-          <expertQuestionApplyContent v-for="item in manangerObj" v-bind:item="item"></expertQuestionApplyContent>
+          <expertQuestionApplyContent v-for="(item,index) in manangerObj" v-bind:item="item" v-bind:index="index"></expertQuestionApplyContent>
           <loading v-show="loading"></loading>
           <noRecord v-show="ifHasRecord"></noRecord>
         </div>

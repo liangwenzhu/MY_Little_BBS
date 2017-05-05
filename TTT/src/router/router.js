@@ -24,9 +24,17 @@ export default new Router({
       component: content
 	},
 	{
-	  path: '/expert',
-      name: 'expert',
-      component: expert
+	  path: '/expert/',
+      //name: 'expert',
+      component: expert,
+	  /*
+	  children: [
+		{
+		  path: '/content/:tieziId',
+          component: content
+		},
+		]
+		*/
 	}
   ]
 })

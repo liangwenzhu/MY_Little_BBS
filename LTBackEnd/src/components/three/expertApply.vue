@@ -30,7 +30,7 @@
           <span>简介</span>
         </div>
         <div class="flex-scroll">
-            <expertManagerApplyContent v-for="item in manangerObj" v-bind:item="item"></expertManagerApplyContent>
+            <expertManagerApplyContent v-for="(item,index) in manangerObj" v-bind:item="item" v-bind:index="index"></expertManagerApplyContent>
           <loading v-show="loading"></loading>
           <noRecord v-show="ifHasRecord"></noRecord>
         </div>

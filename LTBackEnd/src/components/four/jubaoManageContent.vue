@@ -1,7 +1,7 @@
 <template>
   <div class="flex-content" >
-    <!--选定-->
-    <span><input type="checkbox"></span>
+    <!--索引-->
+    <span>{{Index}}</span>
     <!--帖子Id-->
     <span class="pointer" v-on:click="tieziDetailShow">{{item.tieziId}}</span>
     <!--跟帖ID-->
@@ -22,7 +22,10 @@
 //import aaa from '../seven/inform-bottom.vue'
 
 export default {
-  props:['item'],
+  props:{
+    item:'',
+    index:''
+  },
     data:function(){
         return{
 
@@ -34,7 +37,10 @@ export default {
 	computed:{
     ifShowDetail(){
       return this.$store.state.ifShowDetail
-      }
+      },
+    Index(){
+      return this.index +1
+    }
     },
 	methods:{
     modelHostDetailShow(){
