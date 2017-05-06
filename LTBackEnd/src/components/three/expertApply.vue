@@ -26,11 +26,11 @@
           <span class="date">所在公司</span>
           <span v-show="ifShowDetail">职业<b class="glyphicon glyphicon-arrow-up"></b></span>
           <span class="date" v-show="ifShowDetail">邮箱<b class="glyphicon glyphicon-arrow-up"></b></span>
-          <span class="date" v-show="ifShowDetail">申请时间</span>
-          <span>简介</span>
+          <span class="date" v-show="ifShowDetail">申请时间{{total}}</span>
+          <span >简介</span>
         </div>
         <div class="flex-scroll">
-            <expertManagerApplyContent v-for="(item,index) in manangerObj" v-bind:item="item" v-bind:index="index"></expertManagerApplyContent>
+            <expertManagerApplyContent v-on:shijian="Total" v-for="(item,index) in manangerObj" v-bind:item="item" v-bind:index="index"></expertManagerApplyContent>
           <loading v-show="loading"></loading>
           <noRecord v-show="ifHasRecord"></noRecord>
         </div>
@@ -46,6 +46,7 @@
             return{
               manangerObj:'',
               loading:true,
+              total:0
             }
         },
         components:{
@@ -67,7 +68,9 @@
           }
         },
         methods:{
-
+          Total: function (value) {
+            this.total = this.total+value
+          }
         },
       created(){
         var that = this;

@@ -4,7 +4,7 @@
             <li class="active">首页</li>
             <li v-on:mouseover="mouseOver" v-on:mouseout="mouseOut">精选板块</li>
             <li>论坛帮助</li>
-            <li>专家问答</li>
+            <li><router-link to="/expert">专家问答</router-link></li>
             <li>牛人推荐</li>
         </ul>
         <div class="section" v-show="section =='active'" v-on:mouseover="mouseOver" v-on:mouseout="mouseOut">
@@ -69,6 +69,11 @@ export default {
                 }
                  &:hover{
                      opacity: 0.7;
+                 }
+                 a{
+                     padding:0;
+                     color:inherit;
+                     background-color: inherit;
                  }
             }
             .active{

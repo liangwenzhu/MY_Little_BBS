@@ -42,7 +42,7 @@
           </div>
           <div class="content editorContent">
             <dl>
-              <dt>用户名</dt>
+              <dt>用户名{{managerData.questionRequireStatus}}</dt>
               <dd>{{managerData.userName}}</dd>
             </dl>
             <dl>
@@ -69,10 +69,13 @@
               <dt>专家简介</dt>
               <dd><textarea class="form-control" v-model="advantage"></textarea></dd>
             </dl>
-            <button class="btn" v-on:click="store">保存修改</button>
-            <button class="btn keep" v-on:click="questionRequirePush">通过审核，发布</button>
+            <button class="btn" v-if="ifPushed" v-on:click="store">保存修改</button>
+            <button class="btn keepPushed" v-if="ifPushed==false" v-on:click="pushedStore">保存修改</button>
+            <button class="btn keep" v-if="ifPushed" v-on:click="questionRequirePush">通过审核，发布</button>
           </div>
         </div>
+      <p class="tips" v-if="ifPushed==false">保存修改后，问答申请信息将被保存。发布后则用户端被实时影响。</p>
+      <p class="tips" v-if="ifPushed">保存修改后，用户端将被实时影响，若值为空，则默认为原内容。</p>
     </div>
 </template>
 <script>
@@ -86,6 +89,7 @@ export default {
           questionIntroduce:'',
           questionDetailIntroduce:'',
           advantage:'' ,
+          /*保存时，将状态改为modified*/
           questionRequireStatus:'modified',
         }
     },
@@ -93,6 +97,7 @@ export default {
 
     },
 	computed:{
+
     managerData(){
       return this.$store.state.expertQuestionRequireObj;
     },
@@ -116,7 +121,7 @@ export default {
       }
     },
     c_questionShowTime(){
-      if(this.questionTitle.length == 0){
+      if(this.questionShowTime.length == 0){
         return this.managerData.questionShowTime;
       }else{
         return this.questionShowTime;
@@ -142,6 +147,13 @@ export default {
       }else{
         return this.advantage;
       }
+    },
+    ifPushed(){
+      if(this.managerData.questionRequireStatus != "pushed"){
+        return true
+      }else{
+        return false;
+      }
     }
   },
 	methods:{
@@ -152,6 +164,7 @@ export default {
         modelActive:'none',
       })
     },
+    /*等待编辑和已编辑的问答保存方法*/
     store(){
       var that = this;
       var userId = this.c_userId;
@@ -247,8 +260,69 @@ export default {
           alert("专家问答确认出错")
         }
       });
-    }
     },
+    /*已发布的问答的保存方法*/
+    pushedStore(){
+      var that = this;
+      var userId = this.c_userId;
+      var expertId = this.c_expertId;
+      var questionRequireId = this.c_questionRequireId;
+      var questionTitle = this.c_questionTitle;
+      var questionShowTime = this.c_questionShowTime;
+      var questionIntroduce = this.c_questionIntroduce;
+      var questionDetailIntroduce = this.c_questionDetailIntroduce;
+      var advantage = this.c_advantage;
+      var questionRequireStatus = this.questionRequireStatus;
+
+      var tieziSection = "expert";
+      $.ajax({
+        url:"php/backend/expertQuestionRequireManagerPushedUpdate.php",
+        data:{
+          userId:userId,
+          expertId:expertId,
+          questionRequireId:questionRequireId,
+          questionTitle:questionTitle,
+          questionShowTime:questionShowTime,
+          questionIntroduce:questionIntroduce,
+          questionDetailIntroduce:questionDetailIntroduce,
+          advantage:advantage,
+          //questionRequireStatus:questionRequireStatus,
+
+          tieziSection,
+        },
+        type:"post",
+        success:function(data){
+          alert(data);
+          if(data=="success"){
+            alert("更改成功");
+            /*嵌套查询，查询刚更改的最新的数据，并传给vuex*/
+            $.ajax({
+              url:"php/backend/expertQuestionRequireManagerSelect.php",
+              data:{
+                questionRequireId:questionRequireId,
+              },
+              type:"post",
+              dataType:"json",
+              success:function(data){
+                that.$store.commit('expertQuestionRequireObj',data);
+              },
+              error:function(data){
+                alert("查询刚刚编辑的专家问题申请详细信息失败");
+              }
+            });
+            //嵌套查询结束
+          }else{
+            alert("不是success");
+            alert(data);
+          }
+        },
+        error:function(data){
+          alert("编辑专家问题申请详细信息失败");
+        }
+      });
+    },
+  },
+
     // props:['message']
 }
 </script>
@@ -266,8 +340,9 @@ export default {
       background: #ffffff;
       .container{
         width:100%;
-        //height:260px;
+        height:560px;
         margin: 0 auto;
+        //overflow: hidden;
         //background: palevioletred;
         .top-title{
           overflow: hidden;
@@ -296,6 +371,7 @@ export default {
         }
         .editorContent{
           margin-left:40px;
+
         }
         .content{
           margin-top: 20px;
@@ -325,6 +401,12 @@ export default {
             background-color: #3b8cff;
           }
         }
+        .keepPushed{
+          background-color: #ff2b57;
+          &:hover{
+            background-color: rgba(255, 43, 87, 0.86);
+          }
+        }
         .keep{
           background-color: #ff2b57;
           float:right;
@@ -332,6 +414,11 @@ export default {
             background-color: rgba(255, 43, 87, 0.86);
           }
         }
+      }
+      .tips{
+        margin-left:20px;
+        color: #ff2b57;
+        font-size: 14px;
       }
     }
 </style>

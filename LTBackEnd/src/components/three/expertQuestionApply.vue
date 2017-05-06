@@ -10,11 +10,11 @@
             </div>
         </div>
         <div class="introduce">
-          <span class="active">已发布的专家问答</span>
-          <span>待发布的专家问答</span>
-          <span class="active">申请中的专家问答</span>
+          <span v-bind:class="{active:requirestate=='pushed'}" v-on:click="RequireStateChange('pushed')">已发布的专家问答</span>
+          <span v-bind:class="{active:requirestate=='modified'}" v-on:click="RequireStateChange('modified')">待发布的专家问答</span>
+          <span v-bind:class="{active:requirestate=='waiting'}" v-on:click="RequireStateChange('waiting')">申请中的专家问答</span>
           <simpleRoDetail></simpleRoDetail>
-            <b class="loadCount">已全部加载，共<b class="count">{{manangerObj.length}}</b>条记录</b>
+            <b class="loadCount">已全部加载，共<b class="count">{{counter}}</b>条记录</b>
         </div>
         <div class="flex-title">
           <span>序号</span>
@@ -22,10 +22,10 @@
           <span>专家姓名</span>
           <span v-show="ifShowDetail" class="date">申请时间<b class="glyphicon glyphicon-arrow-up"></b></span>
           <span>申请状态</span>
-          <span>问答简介</span>
+          <span>问答简介及管理</span>
         </div>
         <div class="flex-scroll">
-          <expertQuestionApplyContent v-for="(item,index) in manangerObj" v-bind:item="item" v-bind:index="index"></expertQuestionApplyContent>
+          <expertQuestionApplyContent v-on:shijian="count" v-for="(item,index) in manangerObj" v-bind:item="item" v-bind:index="index" v-bind:requirestate="requirestate"></expertQuestionApplyContent>
           <loading v-show="loading"></loading>
           <noRecord v-show="ifHasRecord"></noRecord>
         </div>
@@ -41,6 +41,9 @@
             return{
               manangerObj:'',
               loading:true,
+              //状态选择
+              requirestate:'pushed',
+              counter:0
             }
         },
         components:{
@@ -54,7 +57,7 @@
             return this.$store.state.ifShowDetail
           },
           ifHasRecord(){
-            if(this.loading == false && this.manangerObj.length == 0){
+            if(this.loading == false && this.counter == 0){
               return true
             }else{
               return false
@@ -62,7 +65,17 @@
           }
         },
         methods:{
+          RequireStateChange(data){
+            //alert(data);
+            this.requirestate = data;
+            //点击一下初始化
+            this.counter = 0;
+          },
+          count(objVal){
 
+            this.counter = this.counter + objVal.Val;
+
+          }
         },
       created(){
         var that = this;
@@ -79,6 +92,9 @@
             alert("专家申请查询失败");
           }
         });
+      },
+      watch:{
+
       }
         // props:['message']
     }

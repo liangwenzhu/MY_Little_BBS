@@ -1,9 +1,10 @@
 <template>
   <div class="flex-content" >
-    <span>{{Index}}</span>
+
+    <span>{{Index}}{{count}}</span>
     <span class="pointer" v-on:click="userDetailShow">{{item.userName}}</span>
     <span>{{item.relName}}</span>
-    <span>{{item.major}}</span>
+    <span class="pointer" v-on:click="addd">{{item.major}}</span>
     <span class="date">{{item.company}}</span>
     <span v-show="ifShowDetail">{{item.job}}</span>
     <span class="date" v-show="ifShowDetail">{{item.email}}</span>
@@ -21,7 +22,7 @@ export default {
   },
     data:function(){
         return{
-
+          count:0
         }
     },
     components:{
@@ -33,9 +34,14 @@ export default {
       },
     Index(){
         return this.index +1
-    }
+    },
+
     },
 	methods:{
+    addd(){
+      var value = this.count+ 1;
+      this.$emit('shijian',value);
+    },
     modelExpertDetailShow(){
       this.$store.commit('managerData',this.item);
       this.$store.commit({

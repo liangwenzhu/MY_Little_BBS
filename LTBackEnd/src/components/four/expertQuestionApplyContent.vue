@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-content" >
+  <div class="flex-content" v-show="ifShow">
     <span>{{Index}}</span>
     <span class="pointer" v-on:click="userDetailShow">{{item.userName}}</span>
     <span class="pointer">{{item.relName}}</span>
@@ -15,25 +15,37 @@ export default {
   props:{
     item:'',
     index:'',
+    requirestate:'',
   },
-    data:function(){
-        return{
+  data:function(){
+    return{
 
-        }
+    }
+  },
+  components:{
+    //aaa,
+  },
+  computed:{
+    ifShow(){
+      /*检测状态是否符合，用以筛选数据*/
+      if(this.requirestate == this.item.questionRequireStatus){
+        return true
+      }else{
+        return false
+      }
     },
-    components:{
-        //aaa,
-    },
-	computed:{
     ifShowDetail(){
       return this.$store.state.ifShowDetail
-      },
-    Index(){
-        return this.index + 1;
-    }
     },
-	methods:{
-      //专家申请详情
+    Index(){
+      return this.index + 1;
+    },
+    RequireState(val){
+      return val;
+    }
+  },
+  methods:{
+    //专家申请详情
     modelExpertQuestionRequireDetailShow(){
       //将该轮所有数据传给vuex。
       this.$store.commit('expertQuestionRequireObj',this.item);
@@ -67,8 +79,22 @@ export default {
         }
       })
     },
-    },
-    // props:['message']
+  },
+  created(){
+    //alert("213");
+    if(this.ifShow){
+      var objVal = {inIt:0,Val:1};
+      this.$emit('shijian',objVal)
+    }
+  },
+  watch:{
+    requirestate:function(){
+      if(this.ifShow){
+        var objVal = {inIt:0,Val:1};
+        this.$emit('shijian',objVal)
+      }
+    }
+  },
 }
 </script>
 <style lang="less" rel="stylesheet/less" type="text/css" scoped>
