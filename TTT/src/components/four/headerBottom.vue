@@ -2,7 +2,9 @@
     <div class="bbs-information">
         <div class="bbs-informations">
             <h2>JavaScript论坛</h2>
-            <p>版主：<span>oak110</span><span>asdj</span><span>love</span><span><button href="#" class="btn" v-on:click="managerRequire">申请版主</button></span></p>
+            <p>版主：<span>oak110</span><span>asdj</span><span>love</span><span>
+                <button href="#" class="btn" v-on:click="managerRequire">申请版主</button></span>
+            </p>
             <p>版面简介：<span>JS开发</span></p>
             <div class="rolling-ad">
                 <p><a href="#" class="hot">躬行网年度干货~</a></p>
@@ -63,7 +65,7 @@ export default {
 	methods:{
         managerRequire(){
             this.$store.commit('modelShow',true);
-            this.$store.commit('modelActive','Advantage');
+            this.$store.commit('modelActive','modelManagerRequire');
         },
         showSection(val){
             this.active = val;

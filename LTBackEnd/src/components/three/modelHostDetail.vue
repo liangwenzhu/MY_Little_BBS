@@ -8,12 +8,12 @@
             </div>
           <div class="content">
             <img v-bind:src="managerTouxiang">
-            <article class="introduce">{{managerData.advantage}}</article>
+            <article class="introduce">{{managerData.requireReason}}</article>
           </div>
-
             <!--<span class="fontCountControl">你还可用输入<b>{{gentieContentMaxLength}}</b>个字符</span>-->
-            <button class="btn" v-on:click="postMessage">设为版主</button>
-          <button class="btn" v-on:click="postMessage">忽略它</button>
+          <button class="btn" v-on:click="managerConfirm" v-if="ifConfirm">设为版主</button>
+          <button class="btn ignore" v-on:click="postMessage" v-if="ifConfirm">忽略它</button>
+          <button class="btn ignore" v-on:click="postMessage" v-else="ifConfirm">撤销版主</button>
         </div>
     </div>
 </template>
@@ -35,49 +35,60 @@ export default {
         },
         managerTouxiang(){
           return "http://localhost:8081/luntan/php/upload/" + this.$store.state.managerData.userHead;
-        }
+        },
+    ifConfirm(){
+      if(this.managerData.requireState != "confirmed"){
+        return true
+      }else{
+        return false;
+      }
+    }
     },
 	methods:{
-        close:function() {
-          this.$store.commit({
-            type:'modelWindow',
-            modelShow:false,
-            modelActive:'none',
-          })
+    close:function() {
+      this.$store.commit({
+        type:'modelWindow',
+        modelShow:false,
+        modelActive:'none',
+      })
+    },
+    managerConfirm(){
+      var that = this;
+      var userId = this.managerData.userId;
+      var requireId = this.managerData.requireId;
+      var sectionId = this.managerData.sectionId;
+      var requireState = "confirmed"
+      alert(userId + requireId +sectionId);
+      $.ajax({
+        url:"../php/backend/managerConfirm.php",
+        data:{
+          userId:userId,
+          requireId:requireId,
+          sectionId:sectionId,
+          requireState:requireState,
         },
-        postMessage(){
-            var that = this;
-            var tieziId = this.$store.state.firstFloorObj.tieziId;
-            var gentieContent = this.gentieContent;
-            $.ajax({
-                url:"../php/gentieFllow.php",
-                data:{
-                    tieziId:tieziId,
-                    gentieContent:gentieContent,
-                    beigentieFloorNum:1,
-                },
-                type:"post",
-                success:function(data){
-                    if(data=="success"){
-                        alert("回复成功，获得5点积分奖励");
-                        that.$store.commit('stateChange');
-                        that.$store.commit('modelShow',false);
-                        that.$store.commit('modelActive','none');
-                    }else{
-                        alert("有问题");
-                        alert(data);
-                    }
-                },
-                error:function(data){
-                    alert("失败");
-                }
-            });
+        type:"post",
+        success:function(data){
+          if(data=="success"){
+            alert("成功");
+          }else if(data =="exit"){
+            alert("已经是版主");
+            alert(data);
+          }else{
+            alert("版主确认出错");
+            alert(data)
+          }
+        },
+        error:function(data){
+          alert("失败");
+        }
+      });
         }
     },
     // props:['message']
 }
 </script>
-<style lang="less" rel="stylesheet/less" type="text/css" scope>
+<style lang="less" rel="stylesheet/less" type="text/css" scoped>
     @import '../../../lib/css/selfSet.less';
     .huitie{
         width:600px;
@@ -136,20 +147,28 @@ export default {
                 vertical-align: top;
               }
             }
-            .fontCountControl{
-                float:right;
-                margin-top:5px;
+          .fontCountControl{
+            float:right;
+            margin-top:5px;
+          }
+          .btn{
+            margin-top:20px;
+            background-color: #3b8cff;
+            color:white;
+            .transition(0.3s);
+            &:hover{
+              .transition(0.3s);
+              background-color: #3b8cff;
             }
-            .btn{
-                margin-top:20px;
-                background-color: #3b8cff;
-              color:white;
-                .transition(0.3s);
-                &:hover{
-                    .transition(0.3s);
-                    background-color: #3b8cff;
-                }
+          }
+          .ignore{
+            float:right;
+            background-color: #ff2b57;
+            &:hover{
+              .transition(0.3s);
+              background-color: #ff2b57;
             }
+          }
         }
     }
 </style>

@@ -5,8 +5,6 @@
                 <button class="btn">撤销版主</button>
                 <button class="btn">设为版主</button>
                 <button class="btn">忽略</button>
-                <!--<button class="btn">取消置顶</button>-->
-                <!--<button class="btn delete">删除帖子</button>-->
                 <input type="search" placeholder="搜索">
                 <span class="glyphicon glyphicon-search"></span>
             </div>
@@ -19,15 +17,13 @@
         </div>
 
         <div class="flex-title">
-            <span>序号</span>
-            <span>申请人</span>
-            <span class="date">申请日期</span>
-            <span v-show="ifShowDetail">发帖数<b class="glyphicon glyphicon-arrow-up"></b></span>
-            <span v-show="ifShowDetail">回答数</span>
-            <span v-show="ifShowDetail">得到赞数</span>
-            <span class="date" v-show="ifShowDetail">注册日期<b class="glyphicon glyphicon-arrow-up"></b></span>
-            <span v-show="ifShowDetail">积分<b class="glyphicon glyphicon-arrow-up"></b></span>
-            <span>申请理由</span>
+          <span>序号</span>
+          <span>申请人</span>
+          <span class="date">申请日期</span>
+          <span class="date">确认日期</span>
+          <span v-show="ifShowDetail">版块名</span>
+          <span>申请状态</span>
+          <span>管理操作</span>
         </div>
         <div class="flex-scroll">
           <managerApplyContent v-for="item in manangerObj" v-bind:item="item"></managerApplyContent>
@@ -72,11 +68,11 @@
       created(){
         var that = this;
         $.ajax({
-          url:"php/backend/managerSelect.php",
+          url:"php/backend/managerRequireSelect.php",
           type:"post",
           dataType:"JSON",
           success:function(data){
-            that.loading = false
+            that.loading = false;
             that.manangerObj = data;
           },
           error:function(data){
@@ -172,6 +168,9 @@
             font-size: 14px;
             float:right;
             margin-right:245px;
+          b{
+            color:red;
+          }
         }
     }
     .flex-title{

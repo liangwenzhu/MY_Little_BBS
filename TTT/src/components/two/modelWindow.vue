@@ -26,9 +26,9 @@
                 <transition enter-active-class="modelShowOut" leave-active-class="modelShowIn">
                     <huitieForOtherFloor v-if="modelActive == 'floorNum'"></huitieForOtherFloor>
                 </transition>
-                <!--版主申请优势描述-->
+                <!--版主申请-->
                 <transition enter-active-class="modelShowOut" leave-active-class="modelShowIn">
-                    <Advantage v-if="modelActive == 'Advantage'"></Advantage>
+                    <modelManagerRequire v-if="modelActive == 'modelManagerRequire'"></modelManagerRequire>
                 </transition>
                 <!--专家申请-->
                 <transition enter-active-class="modelShowOut" leave-active-class="modelShowIn">
@@ -54,7 +54,8 @@
     import login from '../three/modelLogin.vue';
     import register from '../three/modelRegister.vue';
     import registerSuccess from '../three/modelRegisterSuccess.vue';
-    import Advantage from '../three/modelAdvantage.vue';
+    //版主申请模块导入
+    import modelManagerRequire from '../three/modelManagerRequire.vue';
     import modelExpertRequire from '../three/modelExpertRequire.vue';
     import modelExpertRequireSuccess from '../three/modelExpertRequireSuccess.vue';
     import modelExpertQuestionRequire from '../three/modelExpertQuestionRequire.vue';
@@ -76,10 +77,10 @@
             huitie,
             huitieForOtherFloor,
             login,
-            Advantage,
             modelExpertRequire,
             modelExpertRequireSuccess,
             modelExpertQuestionRequire,
+            modelManagerRequire
         },
         computed:{
             modelShow(){
@@ -117,7 +118,7 @@
         width: 1200px;
         height:100%;
         margin: 0 auto;
-        // background-color: rgba(0, 0, 0, 0.1);
+         //background-color: rgba(0, 0, 0, 0.65);
         top:0;
         .transition(0.2s);
         z-index: 999;
@@ -126,6 +127,11 @@
             position: relative;
             width:100%;
             height:100%;
+            .boxShadow{
+                -webkit-box-shadow:0 0 20px rgb(101, 101, 101);
+                -moz-box-shadow:0 0 20px rgb(101, 101, 101);
+                box-shadow:0 0 20px rgb(101, 101, 101);
+            }
             .modal-vote{
                 //opacity: 0;
                 position: absolute;
@@ -134,14 +140,11 @@
                 margin-top:-130px;
                 margin-left:-180px;
                 background-color: white;
+
                 .container{
                     position: relative;
                     width:360px;
                     height:270px;
-                    -webkit-box-shadow:0 0 20px rgba(0, 0, 0, 0.20);
-                    -moz-box-shadow:0 0 20px rgba(0, 0, 0, 0.20);
-                    box-shadow:0 0 20px rgba(0, 0, 0, 0.20);
-
                     .register-wrong-tips{
                         position: absolute;
                         opacity: 0;

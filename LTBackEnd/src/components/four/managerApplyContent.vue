@@ -3,12 +3,10 @@
     <span>索引值</span>
     <span class="pointer" v-on:click="userDetailShow">{{item.userName}}</span>
     <span class="date">{{item.requireDate}}</span>
-    <span v-show="ifShowDetail">{{item.userFatieCount}}</span>
-    <span v-show="ifShowDetail">{{item.userGentieCount}}</span>
-    <span v-show="ifShowDetail">{{item.userUpVoteCount}}</span>
-    <span class="date" v-show="ifShowDetail">{{item.userCreatedData}}</span>
-    <span v-show="ifShowDetail">{{item.userScore}}</span>
-    <span class="pointer" v-on:click="modelHostDetailShow">点击查看</span>
+    <span class="date">{{item.confirmDate}}</span>
+    <span v-show="ifShowDetail">{{item.sectionName}}</span>
+    <span>{{item.requireState}}</span>
+    <span class="pointer" v-on:click="modelHostDetailShow">点击操作</span>
   </div>
 </template>
 <script>

@@ -1,9 +1,9 @@
 <template>
     <!--优势描述-->
-    <div class="huitie">
+    <div class="huitie boxShadow">
         <div class="message-container container">
             <div class="top-title">
-                <span class="vote-topleft">申请版主</span>
+                <span class="vote-topleft">版主申请</span>
                 <img class="close" src="../../../lib/imgs/modal/wrong.png" v-on:click="close">
             </div>
             <p class="tips">请简述您申请的理由或个人优势，我们将尽快给您答复</p>
@@ -43,11 +43,11 @@ export default {
         },
         managerRequire(){
             var that = this;
-            var advantage = this.advantageContent;
+            var requireReason = this.advantageContent;
             $.ajax({
                 url:"../php/managerRequire.php",
                 data:{
-                    advantage:advantage,
+                    requireReason:requireReason,
                 },
                 type:"post",
                 success:function(data){
@@ -87,6 +87,7 @@ export default {
             width:580px;
             height:260px;
             margin: 0 auto;
+
             //background: palevioletred;
             .top-title{
                 overflow: hidden;
@@ -128,12 +129,12 @@ export default {
             }
             .huitie-btn{
                 margin-top:20px;
-                background-color: #3276b1;
+                background-color: #ff2b57;
                 .transition(0.3s);
                 border:none;
                 &:hover{
                     .transition(0.3s);
-                    background-color: #315a94;
+                    background-color: #ff2b57;
                 }
             }
         }
