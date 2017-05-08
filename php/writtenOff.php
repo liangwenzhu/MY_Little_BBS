@@ -1,8 +1,15 @@
 <?php
    session_start();
-   if(session_destroy()){
-       echo "success";
+   /**/
+   unset( $_SESSION [ 'username' ]);
+   unset($_SESSION['userid']);
+   echo "success";
+   
+   /*
+   if(unset( $_SESSION [ 'username' ]) &&  unset($_SESSION['userid'])){
+       
    }else{
        echo "未知错误";
    }
+   */
 ?>

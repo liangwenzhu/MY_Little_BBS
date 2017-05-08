@@ -1,7 +1,8 @@
 <?php
    session_start();
-    //$a=$_POST['userName'];
-    //$_SESSION['username'] = $a;
+    
+    $_SESSION['sessionid'] = $a;
     echo $_SESSION['username'];
 	echo $_SESSION['userid'];
+	echo $_SESSION['sessionid'];
 ?>

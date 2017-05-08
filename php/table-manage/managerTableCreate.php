@@ -1,11 +1,12 @@
 <?php
 include ('conn.php');
+/*版主表，区别于版主申请表*/
 $sql = "CREATE TABLE Mananger(
-	requireId INT NOT NULL AUTO_INCREMENT,
-	userName varchar(50) NOT NULL,
-    advantage varchar(250) NOT NULL,
-	requireDate varchar(50) NOT NULL,
-    PRIMARY KEY (requireId)
+	managerId INT NOT NULL AUTO_INCREMENT,
+	userId varchar(10) NOT NULL,
+    requireId varchar(10) NOT NULL,
+	sectionId varchar(10) NOT NULL,
+    PRIMARY KEY (managerId)
 )";
 if(!mysql_query($sql,$con)){
     die('error ' . mysql_error());
