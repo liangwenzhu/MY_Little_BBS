@@ -5,6 +5,7 @@ $sql = "CREATE TABLE Section(
 	sectionName varchar(10) NOT NULL,
 	sectionIntroduce varchar(100) NOT NULL,
 	sectionCreatedDate varchar(100) NOT NULL,
+	sectionEditordDate varchar(100) DEFAULT '暂未修改',
     PRIMARY KEY (sectionId)
 )";
 if(!mysql_query($sql,$con)){
