@@ -1,10 +1,8 @@
 <template>
     <div class="header-top">
         <div class="logo"><img src="../../../lib/imgs/icon/logo.png">论坛</div>
-
         <login  v-if="userName == 'none'"></login>
         <operationUl v-else ></operationUl>
-
         <navWindow></navWindow>
         <div class="clearfix"></div>
     </div>

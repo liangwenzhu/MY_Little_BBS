@@ -10,6 +10,8 @@ const store = new Vuex.Store({
 	modelShow: false,
 	/*具体的模态窗口*/
 	modelActive:'none',
+	/*简介文本字数最大值*/
+	contentMaxLength:200,
 	/*用户数据对象*/	
 	userObj:'',
 	/*用户当前头像*/
@@ -30,6 +32,8 @@ const store = new Vuex.Store({
 	userData:'',
 	/*专家问答申请数据对象*/
 	expertQuestionRequireObj:'',
+	/*板块信息数据对象*/
+	sectionObj:'',
   },
   
   mutations: {
@@ -74,6 +78,10 @@ const store = new Vuex.Store({
 	/*专家问答请求数据对象*/
 	expertQuestionRequireObj(state,dataObj){
 		state.expertQuestionRequireObj = dataObj;
+	},
+	/*板块信息数据对象*/
+	sectionObj(state,dataObj){
+		state.sectionObj = dataObj;
 	}
   }
 })

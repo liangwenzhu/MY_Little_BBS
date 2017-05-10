@@ -27,6 +27,10 @@
           <modelExpertQuestionRequireDetail v-if="modelActive == 'modelExpertQuestionRequireDetail'"></modelExpertQuestionRequireDetail>
           <!--专家问答申请编辑详情-->
           <modelExpertQuestionRequireEditor v-if="modelActive == 'modelExpertQuestionRequireEditor'"></modelExpertQuestionRequireEditor>
+        <!--添加板块-->
+          <modelSectionAdd v-if="modelActive == 'modelSectionAdd'"></modelSectionAdd>
+          <!--板块详情-->
+          <modelSectionEditor v-if="modelActive == 'modelSectionEditor'"></modelSectionEditor>
         </div>
     </div>
 </template>
@@ -45,6 +49,9 @@ import modelUserDetail from '../three/modelUserDetail.vue';
 import modelExpertDetail from '../three/modelExpertDetail.vue';
 import modelExpertQuestionRequireDetail from '../three/modelExpertQuestionRequireDetail.vue';
 import modelExpertQuestionRequireEditor from '../three/modelExpertQuestionRequireEditor.vue';
+import modelSectionEditor from '../three/modelSectionEditor.vue';
+//板块添加组件
+import modelSectionAdd from '../three/modelSectionAdd.vue';
 import '../../../lib/imgs/modal/code-input.png';
 import '../../../lib/imgs/modal/key.png';
 import '../../../lib/imgs/modal/phone.png';
@@ -69,7 +76,9 @@ export default {
       modelUserDetail,
       modelExpertDetail,
       modelExpertQuestionRequireDetail,
-      modelExpertQuestionRequireEditor
+      modelExpertQuestionRequireEditor,
+      modelSectionAdd,
+      modelSectionEditor
     },
 	computed:{
         modelShow(){

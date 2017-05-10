@@ -8,6 +8,8 @@ import Router from 'vue-router'
 import welcome from '../components/three/welcome.vue'
 import userManage from '../components/three/userManage.vue'
 import tieziManage from '../components/three/tieziManage.vue'
+//板块管理
+import sectionManage from '../components/three/sectionManage.vue'
 import managerApply from '../components/three/managerApply.vue'
 import expertApply from '../components/three/expertApply.vue'
 import expertQuestionApply from '../components/three/expertQuestionApply.vue'
@@ -34,6 +36,11 @@ export default new Router({
       path: '/tieziManage',
       name: 'tieziManage',
       component: tieziManage
+    },
+	{
+      path: '/sectionManage',
+      name: 'sectionManage',
+      component: sectionManage
     },
 	{
       path: '/managerApply',

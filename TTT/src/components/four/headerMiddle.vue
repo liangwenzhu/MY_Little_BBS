@@ -5,34 +5,41 @@
             <li v-on:mouseover="mouseOver" v-on:mouseout="mouseOut">精选板块</li>
             <li>论坛帮助</li>
             <li><router-link to="/expert">专家问答</router-link></li>
-            <li>牛人推荐</li>
         </ul>
         <div class="section" v-show="section =='active'" v-on:mouseover="mouseOver" v-on:mouseout="mouseOut">
             <ul>
-                <li class="active">JavaScript</li>
-                <li>HTML5</li>
-                <li>JAVA</li>
-                <li>.NET</li>
-                <li>.IOS</li>
+                <sectionList v-for="item in sectionObj" v-bind:item="item" v-on:shijian="childEventFn"></sectionList>
             </ul>
+        </div>
+        <div class="section loading" v-show="ifLoading">
+            <div class="loadingTips">
+                <loading></loading>
+            </div>
         </div>
     </nav>
 </template>
 <script>
-
+import sectionList from '../five/sectionList.vue';
+import loading from '../tips/loading.vue';
 export default {
     data:function(){
         return{
-            section:''
+            section:'',
+            sectionObj:'',
+
         }
     },
     components:{
-
+        sectionList,
+        loading
     },
 	computed:{
-        navActive(){
-            return this.$store.state.navActive
+        sectionId(){
+            return this.$store.state.sectionId;
         },
+        ifLoading(){
+            return this.$store.state.sectionLoadingState;
+        }
     },
 	methods:{
         mouseOver(){
@@ -40,8 +47,58 @@ export default {
         },
         mouseOut(){
             this.section = ' '
+        },
+        childEventFn(loadingState){
+           // this.ifLoading = loadingState;
         }
     },
+    created(){
+        //初始化板块，传入的是板块ID
+        var that = this;
+        var sectionId = this.$store.state.sectionId;
+        $.ajax({
+            url:"php/sectionSession.php",
+            type:'post',
+            data:{
+                sectionId:sectionId
+            },
+            dataType:'text',
+            success(data){
+                //设置session成功后进行查询
+                $.ajax({
+                    url:'php/sectionSelect.php',
+                    dataType:'json',
+                    success(data){
+                        //成功后得到数据，并关闭Loading动画
+                        that.sectionObj = data;
+
+                        that.$store.commit('sectionLoadingState',false);
+                    },
+                    error(){
+                        alert("板块列表查询出错")
+                    }
+                })
+            }
+        })
+    },
+    watch:{
+        //检测当前板块ID，设置当前板块ID的SESSION；
+        sectionId(){
+            var that = this;
+            var sectionId = this.$store.state.sectionId;
+            $.ajax({
+                url:"php/sectionSession.php",
+                type:'post',
+                data:{
+                    sectionId:sectionId
+                },
+                dataType:'text',
+                success(data){
+
+                }
+            })
+        }
+    }
 
     // props:['message']
 }
@@ -104,6 +161,9 @@ export default {
                     border-bottom: 2px solid red;
                 }
             }
+        }
+        .loading{
+            background-color: rgb(226, 226, 226);
         }
     }
 </style>

@@ -1,21 +1,22 @@
 <template>
     <div class="bbs-information">
         <div class="bbs-informations">
-            <h2>JavaScript论坛</h2>
-            <p>版主：<span>oak110</span><span>asdj</span><span>love</span><span>
-                <button href="#" class="btn" v-on:click="managerRequire">申请版主</button></span>
+            <h2>{{sectionObj.sectionName}}</h2>
+            <p>版主：
+                <span v-for="item in sectionManagerObj">{{item.userName}}</span>
+                <button href="#" class="btn" v-on:click="managerRequire">申请版主</button>
             </p>
-            <p>版面简介：<span>JS开发</span></p>
-            <div class="rolling-ad">
-                <p><a href="#" class="hot">躬行网年度干货~</a></p>
-                <p><a href="#">你想象不到的JS知识这里都有~</a></p>
-                <p><a href="#" class="hot">支付宝蚂蚁森林的布局</a></p>
-            </div>
-            <div class="rolling-ad displayNone">
-                <p><a href="#">躬行网，你身边的技术百科全书</a></p>
-                <p><a href="#" class="hot">要技术干货！？来IT知识节</a></p>
-                <p><a href="#">阿里云和腾讯云，谁会成为中国的AWS？</a></p>
-            </div>
+            <p>版面简介：<span>{{sectionObj.sectionIntroduce}}</span></p>
+            <!--<div class="rolling-ad">-->
+                <!--<p><a href="#" class="hot">躬行网年度干货~</a></p>-->
+                <!--<p><a href="#">你想象不到的JS知识这里都有~</a></p>-->
+                <!--<p><a href="#" class="hot">支付宝蚂蚁森林的布局</a></p>-->
+            <!--</div>-->
+            <!--<div class="rolling-ad displayNone">-->
+                <!--<p><a href="#">躬行网，你身边的技术百科全书</a></p>-->
+                <!--<p><a href="#" class="hot">要技术干货！？来IT知识节</a></p>-->
+                <!--<p><a href="#">阿里云和腾讯云，谁会成为中国的AWS？</a></p>-->
+            <!--</div>-->
         </div>
         <ul>
             <li v-on:click="showSection('myTiezi')">我的帖子</li>
@@ -51,16 +52,18 @@ export default {
         return{
             active:'none',
             ifOpen:false,
-            dataObj:''
+            dataObj:'',
+            sectionObj:'',
+            sectionManagerObj:null,
         }
     },
     components:{
         headerBottomList
     },
 	computed:{
-        navActive(){
-            return this.$store.state.navActive
-        },
+        sectionId(){
+            return this.$store.state.sectionId;
+        }
     },
 	methods:{
         managerRequire(){
@@ -76,6 +79,7 @@ export default {
         }
     },
     watch:{
+        //检测查看的是那个信息，我的帖子还是我参与的帖子。
         active(){
             var that = this;
             if(this.active == "myTiezi"){
@@ -104,7 +108,76 @@ export default {
                 });
             }
 
+        },
+        sectionId(){
+            var that = this;
+            var sectionId = this.sectionId;
+            $.ajax({
+                url:'php/sectionDetailSelect.php',
+                data:{
+                    sectionId:sectionId,
+                },
+                type:"post",
+                dataType:'json',
+                success(data){
+                    that.sectionObj = data;
+                    /*查询版主*/
+                    $.ajax({
+                        url:'php/sectionManagerSelect.php',
+                        data:{
+                            sectionId:sectionId,
+                        },
+                        type:'post',
+                        dataType:'json',
+                        success(data){
+                            that.sectionManagerObj = data;
+                            that.$store.commit('sectionLoadingState',false);
+                        },
+                        error(data){
+                            alert("版主查询错误");
+                        }
+                    })
+                },
+                error(data){
+                    alert("版块查询出错");
+                    alert(data)
+                }
+            })
         }
+    },
+    created(){
+        var that = this;
+        var sectionId = this.sectionId;
+        $.ajax({
+            url:'php/sectionDetailSelect.php',
+            data:{
+                sectionId:sectionId,
+            },
+            type:"post",
+            dataType:'json',
+            success(data){
+                that.sectionObj = data;
+                /*查询版主*/
+                $.ajax({
+                    url:'php/sectionManagerSelect.php',
+                    data:{
+                        sectionId:sectionId,
+                    },
+                    type:'post',
+                    dataType:'json',
+                    success(data){
+                        that.sectionManagerObj = data;
+                    },
+                    error(data){
+                        alert("版主查询错误");
+                    }
+                })
+            },
+            error(data){
+                alert("版块查询出错");
+                alert(data)
+            }
+        })
     }
     // props:['message']
 }
@@ -136,14 +209,15 @@ export default {
                     font-weight: 400;
                     color: rgba(255, 255, 255, 0.6);
                     margin-left:15px;
-                    button{
-                        text-align: center;
-                        font-size: 12px;
-                        color: white;
-                        background-color: #e6005c;
-                        text-decoration: none;
-                        border:none;
-                    }
+                }
+                button{
+                    text-align: center;
+                    font-size: 12px;
+                    color: white;
+                    background-color: #e6005c;
+                    text-decoration: none;
+                    border:none;
+                    margin-left:20px;
                 }
             }
             .rolling-ad{

@@ -28,6 +28,9 @@ const store = new Vuex.Store({
 	/*用户通知内容*/
 	userInformContain:'',
 	
+	/*板块Id*/
+	sectionId:1,
+	sectionLoadingState:true,
 	/*********帖子信息********/
 	
 	/*一页最多帖子数-帖子排版*/
@@ -99,6 +102,12 @@ const store = new Vuex.Store({
 		state.userSign = object.userSign;
 		state.userHead = "http://localhost:8081/luntan/php/upload/" + object.userHead;
 		state.userScore = object.userScore;
+	},
+	sectionId(state,val){
+		state.sectionId = val;
+	},
+	sectionLoadingState(state,val){
+		state.sectionLoadingState = val;
 	},
 	/*帖子初始化*/
 	pageinit(state){

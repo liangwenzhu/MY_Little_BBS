@@ -18,20 +18,8 @@ export default {
     modelWindow,
     myHeader
   },
-  created(){
-    var sectionId = 1;
-    $.ajax({
-      url:"php/sectionSession.php",
-      type:'post',
-      data:{
-        sectionId:sectionId
-      },
-      dateType:'text',
-      success(data){
-        //alert(data)
-      }
-    })
-  }
+  computed:{
+  },
 }
 </script>
 
