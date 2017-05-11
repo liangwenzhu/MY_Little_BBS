@@ -20,10 +20,6 @@
             <hotExperts></hotExperts>
         </div>
         <niceActive></niceActive>
-        <!--<div class="niceActive">-->
-            <!--<p class="title">近期精彩社区问答活动回顾</p>-->
-            <!--<niceActiveChild></niceActiveChild>-->
-        <!--</div>-->
     </div>
 </template>
 <script>

@@ -1,13 +1,12 @@
 <template>
-  <div class="flex-content" >
-
-    <span>{{Index}}{{count}}</span>
+  <div class="flex-content" v-show="ifShow">
+    <span>{{Index}}</span>
     <span class="pointer" v-on:click="userDetailShow">{{item.userName}}</span>
     <span>{{item.relName}}</span>
     <span class="pointer" v-on:click="addd">{{item.major}}</span>
     <span class="date">{{item.company}}</span>
     <span v-show="ifShowDetail">{{item.job}}</span>
-    <span class="date" v-show="ifShowDetail">{{item.email}}</span>
+    <span>{{item.requireState}}</span>
     <span class="date" v-show="ifShowDetail">{{item.requireDate}}</span>
     <span class="pointer" v-on:click="modelExpertDetailShow">点击查看</span>
   </div>
@@ -18,7 +17,8 @@
 export default {
   props:{
     item:'',
-    index:''
+    index:'',
+    requirestate:'',
   },
     data:function(){
         return{
@@ -35,7 +35,14 @@ export default {
     Index(){
         return this.index +1
     },
-
+    ifShow(){
+      /*检测状态是否符合，用以筛选数据*/
+      if(this.requirestate == this.item.requireState){
+        return true
+      }else{
+        return false
+      }
+    },
     },
 	methods:{
     addd(){
@@ -76,6 +83,21 @@ export default {
     },
     },
     // props:['message']
+  created(){
+    //alert("213");
+    if(this.ifShow){
+      var val = 1;
+      this.$emit('shijian',val)
+    }
+  },
+  watch:{
+    requirestate:function(){
+      if(this.ifShow){
+        var val = 1;
+        this.$emit('shijian',val);
+      }
+    }
+  },
 }
 </script>
 <style lang="less" rel="stylesheet/less" type="text/css" scoped>

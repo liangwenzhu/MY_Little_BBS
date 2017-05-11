@@ -3,17 +3,20 @@
     <div class="huitie">
         <div class="message-container container">
             <div class="top-title">
-                <span class="vote-topleft">专家申请</span>
+                <span class="vote-topleft">专家申请详情及简介</span>
                 <img class="close" src="../../../lib/imgs/modal/wrong.png" v-on:click="close">
             </div>
           <div class="content">
             <img v-bind:src="managerTouxiang">
-            <article class="introduce">{{managerData.advantage}}</article>
+            <div class="introduce">
+              <article>{{managerData.advantage}}</article>
+              <p class="email">邮箱：<span>{{managerData.email}}</span></p>
+            </div>
           </div>
-
             <!--<span class="fontCountControl">你还可用输入<b>{{gentieContentMaxLength}}</b>个字符</span>-->
-          <button class="btn" v-on:click="beExpert">设为专家</button>
-          <button class="btn">忽略它</button>
+          <button class="btn" v-on:click="beExpert" v-if="ifBtnShow">设为专家</button>
+          <button class="btn ignore" v-if="ifBtnShow">忽略它</button>
+          <button class="btn ignore" v-else>撤销专家</button>
         </div>
     </div>
 </template>
@@ -35,7 +38,12 @@ export default {
         },
         managerTouxiang(){
           return "http://localhost:8081/luntan/php/upload/" + this.$store.state.managerData.userHead;
-        }
+        },
+    ifBtnShow(){
+          if(this.managerData.requireState == "waiting"){
+            return true
+          }
+    }
     },
 	methods:{
     close:function() {
@@ -57,16 +65,10 @@ export default {
       var requireDate = this.managerData.requireDate;
 
       $.ajax({
-        url:"../php/backend/expertManagerComfirm.php",
+        url:"php/backend/expertManagerComfirm.php",
         data:{
           requireId:requireId,
           userId:userId,
-          relName:relName,
-          major:major,
-          company:company,
-          email:email,
-          advantage:advantage,
-          requireDate:requireDate
         },
         type:"post",
         success:function(data){
@@ -80,7 +82,8 @@ export default {
           }else if(data=="username exit"){
             alert("已经是专家了")
           }else{
-            //alert("专家确认有问题");
+            alert(data);
+            alert("专家确认有问题");
             //alert(data);
           }
         },
@@ -89,36 +92,11 @@ export default {
         }
       });
     },
-    postMessage(){
-      var that = this;
-      var tieziId = this.$store.state.firstFloorObj.tieziId;
-      var gentieContent = this.gentieContent;
-      $.ajax({
-        url:"../php/gentieFllow.php",
-        data:{
-        },
-        type:"post",
-        success:function(data){
-          if(data=="success"){
-            alert("回复成功，获得5点积分奖励");
-            that.$store.commit('stateChange');
-            that.$store.commit('modelShow',false);
-            that.$store.commit('modelActive','none');
-          }else{
-            alert("有问题");
-            alert(data);
-          }
-        },
-        error:function(data){
-          alert("失败");
-        }
-      });
-    }
     },
     // props:['message']
 }
 </script>
-<style lang="less" rel="stylesheet/less" type="text/css" scope>
+<style lang="less" rel="stylesheet/less" type="text/css" scoped>
     @import '../../../lib/css/selfSet.less';
     .huitie{
         width:600px;
@@ -172,10 +150,19 @@ export default {
                 display: inline-block;
                 height:100px;
                 width:430px;
-                //background-color: red;
                 //border-left: 1px solid #3b8cff;
                 vertical-align: top;
+                article{
+                  height:80px;
+                }
+                .email{
+                  //display: inline-block;
+                  //width:430px;
+                  //color:Red;
+                  //background-color: red;
+                }
               }
+
             }
             .fontCountControl{
                 float:right;
@@ -191,6 +178,14 @@ export default {
                     background-color: #3b8cff;
                 }
             }
+          .ignore{
+            float:right;
+            background-color: #ff2b57;
+            &:hover{
+              .transition(0.3s);
+              background-color: #ff2b57;
+            }
+          }
         }
     }
 </style>

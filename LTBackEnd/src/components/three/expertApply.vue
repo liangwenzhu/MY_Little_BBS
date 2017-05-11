@@ -2,9 +2,7 @@
     <div class="backendContent">
         <div class="content-header">
             <div class="search">
-                <button class="btn">撤销专家</button>
-                <button class="btn">设为专家</button>
-                <button class="btn">忽略</button>
+
                 <!--<button class="btn">取消置顶</button>-->
                 <!--<button class="btn delete">删除帖子</button>-->
                 <input type="search" placeholder="专家搜索">
@@ -12,10 +10,11 @@
             </div>
         </div>
         <div class="introduce">
-            <span>所有专家名单</span>
-            <span class="active">专家申请名单</span>
+          <span v-bind:class="{active:requirestate=='confirmed'}" v-on:click="RequireStateChange('confirmed')">专家名单</span>
+          <span v-bind:class="{active:requirestate=='waiting'}" v-on:click="RequireStateChange('waiting')">专家申请名单</span>
+          <span v-bind:class="{active:requirestate=='ignore'}" v-on:click="RequireStateChange('ignore')">忽略名单</span>
           <simpleRoDetail></simpleRoDetail>
-            <b class="loadCount">已全部加载，共<b class="count">{{manangerObj.length}}</b>条记录</b>
+          <b class="loadCount">已全部加载，共<b class="count">{{counter}}</b>条记录</b>
         </div>
 
         <div class="flex-title">
@@ -25,12 +24,12 @@
           <span >擅长领域</span>
           <span class="date">所在公司</span>
           <span v-show="ifShowDetail">职业<b class="glyphicon glyphicon-arrow-up"></b></span>
-          <span class="date" v-show="ifShowDetail">邮箱<b class="glyphicon glyphicon-arrow-up"></b></span>
-          <span class="date" v-show="ifShowDetail">申请时间{{total}}</span>
+          <span>申请状态</span>
+          <span class="date" v-show="ifShowDetail">申请时间</span>
           <span >简介</span>
         </div>
         <div class="flex-scroll">
-            <expertManagerApplyContent v-on:shijian="Total" v-for="(item,index) in manangerObj" v-bind:item="item" v-bind:index="index"></expertManagerApplyContent>
+            <expertManagerApplyContent v-on:shijian="count" v-for="(item,index) in manangerObj" v-bind:item="item" v-bind:index="index" v-bind:requirestate="requirestate"></expertManagerApplyContent>
           <loading v-show="loading"></loading>
           <noRecord v-show="ifHasRecord"></noRecord>
         </div>
@@ -45,8 +44,9 @@
         data:function(){
             return{
               manangerObj:'',
+              requirestate:'confirmed',
               loading:true,
-              total:0
+              counter:0
             }
         },
         components:{
@@ -60,7 +60,7 @@
             return this.$store.state.ifShowDetail
           },
           ifHasRecord(){
-            if(this.loading == false && this.manangerObj.length == 0){
+            if(this.loading == false && this.counter == 0){
               return true
             }else{
               return false
@@ -68,8 +68,15 @@
           }
         },
         methods:{
-          Total: function (value) {
-            this.total = this.total+value
+          /*切换列表视图*/
+          RequireStateChange(data){
+            //alert(data);
+            this.requirestate = data;
+            //点击一下初始化
+            this.counter = 0;
+          },
+          count(val){
+            this.counter = this.counter + val;
           }
         },
       created(){
@@ -91,7 +98,7 @@
         // props:['message']
     }
 </script>
-<style lang="less" rel="stylesheet/less" type="text/css" scope>
+<style lang="less" rel="stylesheet/less" type="text/css" scoped>
     @import '../../../lib/css/selfSet.less';
     .backendContent{
         width:100%;

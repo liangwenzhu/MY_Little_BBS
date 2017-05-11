@@ -91,7 +91,7 @@
                 var advantage = this.advantage;
 
                 $.ajax({
-                    url:"../php/expertManagerRequire.php",
+                    url:"php/expertRequire.php",
                     data:{
                         relName:relName,
                         major:major,

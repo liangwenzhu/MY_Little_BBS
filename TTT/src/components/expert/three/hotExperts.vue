@@ -24,15 +24,13 @@ export default {
         expertList
     },
 	computed:{
-        navActive(){
-            return this.$store.state.navActive
-        },
+
     },
 	methods:{
         chooseSection(){
-            this.section = "123";
-        }
-    },
+        this.section = "123";
+    }
+},
     created(){
         var that = this;
         $.ajax({
