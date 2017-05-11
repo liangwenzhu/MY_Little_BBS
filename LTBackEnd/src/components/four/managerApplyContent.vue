@@ -1,6 +1,6 @@
 <template>
-  <div class="flex-content" >
-    <span>索引值</span>
+  <div class="flex-content" v-show="ifShow">
+    <span>{{Index}}</span>
     <span class="pointer" v-on:click="userDetailShow">{{item.userName}}</span>
     <span class="date">{{item.requireDate}}</span>
     <span class="date">{{item.confirmDate}}</span>
@@ -13,7 +13,11 @@
 //import aaa from '../seven/inform-bottom.vue'
 
 export default {
-  props:['item'],
+  props:{
+    item:'',
+    index:'',
+    requirestate:'',
+  },
     data:function(){
         return{
 
@@ -25,7 +29,18 @@ export default {
 	computed:{
     ifShowDetail(){
       return this.$store.state.ifShowDetail
+      },
+    Index(){
+      return this.index + 1;
+    },
+    ifShow(){
+      /*检测状态是否符合，用以筛选数据*/
+      if(this.requirestate == this.item.requireState){
+        return true
+      }else{
+        return false
       }
+    },
     },
 	methods:{
     modelHostDetailShow(){
@@ -62,6 +77,21 @@ export default {
 
     },
     },
+  created(){
+    //alert("213");
+    if(this.ifShow){
+      var val = 1;
+      this.$emit('shijian',val)
+    }
+  },
+  watch:{
+    requirestate:function(){
+      if(this.ifShow){
+        var val = 1;
+        this.$emit('shijian',val);
+      }
+    }
+  },
     // props:['message']
 }
 </script>

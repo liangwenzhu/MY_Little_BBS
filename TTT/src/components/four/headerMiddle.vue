@@ -25,7 +25,7 @@ export default {
     data:function(){
         return{
             section:'',
-            sectionObj:'',
+
 
         }
     },
@@ -39,6 +39,9 @@ export default {
         },
         ifLoading(){
             return this.$store.state.sectionLoadingState;
+        },
+        sectionObj(){
+            return this.$store.state.sectionDataObj;
         }
     },
 	methods:{
@@ -70,9 +73,12 @@ export default {
                     dataType:'json',
                     success(data){
                         //成功后得到数据，并关闭Loading动画
-                        that.sectionObj = data;
-
+                        //that.sectionObj = data;
+                        //提交数据到vuex
+                        that.$store.commit('sectionDataObj',data);
+                        //
                         that.$store.commit('sectionLoadingState',false);
+
                     },
                     error(){
                         alert("板块列表查询出错")
@@ -163,7 +169,7 @@ export default {
             }
         }
         .loading{
-            background-color: rgb(226, 226, 226);
+            background-color: rgba(226, 226, 226, 0.55);
         }
     }
 </style>

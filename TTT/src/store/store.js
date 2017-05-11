@@ -28,9 +28,12 @@ const store = new Vuex.Store({
 	/*用户通知内容*/
 	userInformContain:'',
 	
-	/*板块Id*/
+	/*板块初始化的Id*/
 	sectionId:1,
+	/*板块切换时动画状态*/
 	sectionLoadingState:true,
+	/*板块数据*/
+	sectionDataObj:'',
 	/*********帖子信息********/
 	
 	/*一页最多帖子数-帖子排版*/
@@ -103,11 +106,17 @@ const store = new Vuex.Store({
 		state.userHead = "http://localhost:8081/luntan/php/upload/" + object.userHead;
 		state.userScore = object.userScore;
 	},
+	/*板块Id变更*/
 	sectionId(state,val){
 		state.sectionId = val;
 	},
+	/*板块Loading动画变更*/
 	sectionLoadingState(state,val){
 		state.sectionLoadingState = val;
+	},
+	/*板块数据*/
+	sectionDataObj(state,obj){
+		state.sectionDataObj = obj;
 	},
 	/*帖子初始化*/
 	pageinit(state){

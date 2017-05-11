@@ -10,10 +10,11 @@
             </div>
         </div>
         <div class="introduce">
-            <span>现在版主</span>
-            <span class="active">申请名单</span>
+          <span v-bind:class="{active:requirestate=='confirmed'}" v-on:click="RequireStateChange('confirmed')">现在版主</span>
+          <span v-bind:class="{active:requirestate=='waiting'}" v-on:click="RequireStateChange('waiting')">申请名单</span>
+          <span v-bind:class="{active:requirestate=='ignore'}" v-on:click="RequireStateChange('ignore')">忽略名单</span>
           <simpleRoDetail></simpleRoDetail>
-            <b class="loadCount">已全部加载，共<b>{{manangerObj.length}}</b>条记录</b>
+            <b class="loadCount">已全部加载，共<b>{{counter}}</b>条记录</b>
         </div>
 
         <div class="flex-title">
@@ -26,7 +27,7 @@
           <span>管理操作</span>
         </div>
         <div class="flex-scroll">
-          <managerApplyContent v-for="item in manangerObj" v-bind:item="item"></managerApplyContent>
+          <managerApplyContent v-on:shijian="count" v-for="(item,index) in manangerObj" v-bind:item="item" v-bind:index="index" v-bind:requirestate="requirestate"></managerApplyContent>
           <loading v-show="loading"></loading>
           <noRecord v-show="ifHasRecord"></noRecord>
         </div>
@@ -41,6 +42,8 @@
         data:function(){
             return{
               manangerObj:'',
+              counter:0,
+              requirestate:'confirmed',
               loading:true
             }
         },
@@ -55,7 +58,7 @@
             return this.$store.state.ifShowDetail
           },
           ifHasRecord(){
-            if(this.loading == false && this.manangerObj.length == 0){
+            if(this.loading == false && this.counter == 0){
               return true
             }else{
               return false
@@ -63,7 +66,16 @@
           }
         },
         methods:{
-
+          /*切换列表视图*/
+          RequireStateChange(data){
+            //alert(data);
+            this.requirestate = data;
+            //点击一下初始化
+            this.counter = 0;
+          },
+          count(val){
+            this.counter = this.counter + val;
+          }
         },
       created(){
         var that = this;

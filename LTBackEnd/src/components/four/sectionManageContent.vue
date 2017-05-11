@@ -1,10 +1,10 @@
 <template>
   <div class="flex-content" >
-    <span>索引值</span>
-    <span class="pointer">{{item.sectionId}}</span>
+    <span>{{Index}}</span>
+    <span>{{item.sectionId}}</span>
     <span class="date">{{item.sectionName}}</span>
     <!--<span>{{managerObjData.length}}</span>-->
-    <span class="pointer">{{managerJsonDataObj.length}}</span>
+    <span>{{managerJsonDataObj.length}}</span>
     <span class="date">{{item.sectionCreatedDate}}</span>
     <span class="pointer" v-on:click="modelSectionEditorShow">点击操作</span>
   </div>
@@ -13,7 +13,10 @@
 //import aaa from '../seven/inform-bottom.vue'
 
 export default {
-  props:['item'],
+  props:{
+    item:'',
+    index:''
+  },
     data:function(){
         return{
 
@@ -28,6 +31,9 @@ export default {
       },
     managerJsonDataObj(){
       return this.item.managerJsonDataObj;
+    },
+    Index(){
+      return this.index + 1;
     }
     },
 	methods:{

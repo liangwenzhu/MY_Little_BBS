@@ -13,6 +13,16 @@
                     <td class="right-input"><input class="form-control input-tiezi-title" v-model="tieziTitle"><span>你还可以输入<b>{{tieziTitleMaxLength}}</b>个字符</span></td>
                 </tr>
                 <tr>
+                    <td class="left-title">选择板块</td>
+                    <td class="right-input">
+                        <!--{{tieziSection}}-->
+                        <select class="form-control input-tiezi-section" v-model="tieziSection">
+                            <option v-for="item in sectionObj" v-bind:value="item.sectionId">{{item.sectionName}}</option>
+                        </select>
+                        <span>请选择所要发帖的板块</span>
+                    </td>
+                </tr>
+                <tr>
                     <td class="left-title">帖子内容</td>
                     <td class="right-input">
                         <textarea class="form-control textarea input-tiezi-content" v-model="tieziContent"></textarea>
@@ -26,17 +36,7 @@
                         <span>添加标签，比如“前端”</span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="left-title">选择板块</td>
-                    <td class="right-input">
-                        <select class="form-control input-tiezi-section" v-model="tieziSection">
-                            <option>JS</option>
-                            <option>HTML</option>
-                            <option>CSS</option>
-                        </select>
-                        <span>请选择所要发帖的板块</span>
-                    </td>
-                </tr>
+
                 <tr>
                     <td class="left-title">帖子分数<i class="glyphicon"></i></td>
                     <td class="right-input">
@@ -63,9 +63,8 @@ export default {
             tieziTitle:'',
             tieziContent:'',
             tieziTag:'',
-            tieziSection:'JS',
+            tieziSection:'',
             tieziScore:'',
-
         }
     },
     components:{
@@ -93,6 +92,15 @@ export default {
         /*输入框最少回复长度*/
         contentMinLength(){
             return this.$store.state.contentMinLength;
+        },
+        /*获取板块列表*/
+        sectionObj(){
+            return this.$store.state.sectionDataObj;
+        },
+        option(){
+            return [
+                {text:'css',value:'a'}
+            ]
         }
     },
 	methods:{

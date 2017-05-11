@@ -5,7 +5,7 @@
     <span class="pointer" v-bind:class="{tieziTitle:ifShowDetail == false}" v-on:click="tieziDetailShow">{{item.tieziTitle}}</span>
     <span class="pointer" v-on:click="userDetailShow">{{item.tieziCreater}}</span>
     <span v-show="ifShowDetail">{{item.tieziCreaterData}}</span>
-    <span >{{ifoverHead}}</span>
+    <span >{{item.tieziSection}}</span>
     <span v-show="ifShowDetail">{{item.tieziLastAnswer}}</span>
     <span v-show="ifShowDetail">{{item.tieziLastAnswerDate}}</span>
     <span v-show="ifShowDetail">{{item.tieziScore}}</span>

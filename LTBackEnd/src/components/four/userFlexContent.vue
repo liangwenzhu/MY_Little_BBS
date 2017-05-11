@@ -7,6 +7,7 @@
       <span v-show="ifShowDetail">{{item.userScore}}</span>
       <span v-show="ifShowDetail">{{item.userFatieCount}}</span>
       <span v-show="ifShowDetail">{{item.userGentieCount}}</span>
+
       <span v-show="ifShowDetail">{{item.userUpVoteCount}}</span>
     </div>
 </template>

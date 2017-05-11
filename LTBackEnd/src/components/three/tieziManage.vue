@@ -16,16 +16,16 @@
             <span>普通</span>
             <span>顶置</span>
             <simpleRoDetail></simpleRoDetail>
+            <span class="tips">红色为顶置帖子</span>
             <b class="loadCount">已全部加载，共<b class="light">{{tieziObj.length}}</b>条记录</b>
         </div>
-
         <div class="flex-title">
             <span>序号</span>
             <span>帖子ID</span>
             <span v-bind:class="{tieziTitle:ifShowDetail == false}">帖子名</span>
             <span>创建人</span>
             <span v-show="ifShowDetail">创建日期<b class="glyphicon glyphicon-arrow-up"></b></span>
-            <span>是否顶置</span>
+            <span>所属板块</span>
             <span v-show="ifShowDetail">最后留言用户</span>
             <span v-show="ifShowDetail">最后留言日期<b class="glyphicon glyphicon-arrow-up"></b></span>
             <span v-show="ifShowDetail">积分<b class="glyphicon glyphicon-arrow-up"></b></span>
@@ -83,7 +83,7 @@
             var pageNum = 1;
             /*分页数据构建*/
             $.ajax({
-                url:"php/tieziFenyeSelect.php",
+                url:"php/backend/tieziFenyeSelect.php",
                 data:{
                     pageNum:pageNum,
                     tieziMaxNum:tieziMaxNum,
@@ -183,6 +183,10 @@
             }
             .active{
                 color:#3b8cff;
+            }
+            .tips{
+              margin-left:50px;
+              color:red;
             }
             .loadCount{
                 font-size: 14px;

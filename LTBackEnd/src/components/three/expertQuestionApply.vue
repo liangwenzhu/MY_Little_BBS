@@ -72,9 +72,7 @@
             this.counter = 0;
           },
           count(objVal){
-
             this.counter = this.counter + objVal.Val;
-
           }
         },
       created(){

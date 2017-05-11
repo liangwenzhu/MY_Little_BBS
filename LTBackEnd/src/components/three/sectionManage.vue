@@ -2,14 +2,13 @@
     <div class="backendContent">
         <div class="content-header">
             <div class="search">
-                <button class="btn" v-on:click="sectionAdd">添加板块</button>
+                <!--<button class="btn" v-on:click="sectionAdd">添加板块</button>-->
+                <div class="Tip">可以对板块进行相关操作</div>
                 <input type="search" placeholder="搜索">
                 <span class="glyphicon glyphicon-search"></span>
             </div>
         </div>
         <div class="introduce">
-            <span>现在版主</span>
-            <span class="active">申请名单</span>
           <simpleRoDetail></simpleRoDetail>
             <b class="loadCount">已全部加载，共<b>{{manangerObj.length}}</b>条记录</b>
         </div>
@@ -23,7 +22,7 @@
           <span>板块详情及管理</span>
         </div>
         <div class="flex-scroll">
-          <managerApplyContent v-for="item in manangerObj" v-bind:item="item"></managerApplyContent>
+          <managerApplyContent v-for="(item,index) in manangerObj" v-bind:item="item" v-bind:index="index"></managerApplyContent>
           <loading v-show="loading"></loading>
           <noRecord v-show="ifHasRecord"></noRecord>
         </div>
@@ -111,6 +110,12 @@
         margin-bottom: 15px;
         //overflow: hidden;
         position: relative;
+        overflow: hidden;
+      .Tip{
+        display: inline;
+        font-size: 14px;
+        color: #ff2b57;
+      }
         span{
             position: absolute;
             width:20px;
