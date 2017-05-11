@@ -1,6 +1,6 @@
 <?php
 include ('conn.php');
-$sql = "DROP TABLE ExpertManager";
+$sql = "DROP TABLE ExpertRequire";
 if(!mysql_query($sql,$con)){
     die('error ' . mysql_error());
 }

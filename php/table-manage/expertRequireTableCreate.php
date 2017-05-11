@@ -1,6 +1,7 @@
 <?php
 include ('conn.php');
-$sql = "CREATE TABLE ExpertManager(
+/*专家申请表*/
+$sql = "CREATE TABLE ExpertRequire(
 	requireId INT NOT NULL AUTO_INCREMENT,
 	userId varchar(50) NOT NULL,
 	relName varchar(50) NOT NULL,
@@ -10,6 +11,8 @@ $sql = "CREATE TABLE ExpertManager(
 	email varchar(50) NOT NULL,
     advantage varchar(250) NOT NULL,
 	requireDate varchar(50) NOT NULL,
+	comfirmDate varchar(50) DEFAULT '待定',
+	requireState varchar(10) DEFAULT 'waiting',
     PRIMARY KEY (requireId)
 )";
 if(!mysql_query($sql,$con)){

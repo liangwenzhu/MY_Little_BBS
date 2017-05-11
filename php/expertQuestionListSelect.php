@@ -10,7 +10,7 @@ mysql_select_db("my_db", $con);
 
 $sql = "select a.*,b.questionTitle,b.questionIntroduce,b.questionDetailIntroduce,b.questionShowTime,
 		c.userHead,
-		d.advantage,d.relName
+		e.advantage,e.relName
 from 
 (select * from expertQuestion)a
 inner join
@@ -22,6 +22,9 @@ on a.userId = c.userId
 inner join
 (select * from Expert)d
 on a.expertId = d.expertId
+inner join
+(select * from ExpertRequire)e
+on d.requireId = e.requireId
 order by a.expertQuestionId desc";
 
 

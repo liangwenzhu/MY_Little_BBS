@@ -24,12 +24,13 @@ if($checkIfExitResultRow > 0)
 	echo "exit";
 	exit;
 }
+//创建新的帖子
 $fatieSql = "insert into Tiezi(tieziTitle,tieziContent,tieziSection,tieziCreater,tieziCreaterUserId,tieziCreaterData) 
                     values ('$tieziTitle','$tieziContent','$tieziSection','$tieziCreater','$tieziCreaterUserId',now())";
 if(!mysql_query($fatieSql,$con)){
     die('error: ' . mysql_error());
 }
-
+//更改问答申请表状态
 $ExpertQuestionRequireStatusSql = "update ExpertQuestionRequire set questionRequireStatus = '$questionRequireStatus'
 									where questionRequireId = '$questionRequireId'";
 if(!mysql_query($ExpertQuestionRequireStatusSql,$con)){

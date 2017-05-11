@@ -6,28 +6,12 @@ if (!$con)
 }
 mysql_select_db("my_db", $con);
 
-//$tieziId = $_POST[tieziId];
 
-//$sql = "select * from Gentie
-//order by floorNum asc
-//limit 0,$tiezimaxnum";
-/*
-$sql = "select a.*,b.userSign,b.userHead from 
-(select * from Gentie )a
-left join
-(select * from Users )b
- on a.userName = b.userName
-left JOIN 
-(select tieziId from Tiezi)c
-on a.tieziId = c.tieziId
-WHERE a.tieziId = '$tieziId'
-order by a.gentieId asc";
-*/
 
-$sql = "select a.*,b.requireId,b.relName,b.major,b.company,b.job,b.email,b.advantage,b.requireDate from 
+$sql = "select a.*,b.requireId,b.relName,b.major,b.company,b.job,b.email,b.advantage,b.requireDate,b.requireState from 
 (select * from Users )a
 inner join
-(select * from ExpertManager )b
+(select * from ExpertRequire)b
 on a.userId = b.userId";
 //order by a.gentieId asc";
 
@@ -55,6 +39,7 @@ class tiezi
 	public $email;
 	public $advantage;
 	public $requireDate;
+	public $requireState;
 }
 while ($row= mysql_fetch_array($result, MYSQL_ASSOC))
 {
@@ -77,6 +62,7 @@ while ($row= mysql_fetch_array($result, MYSQL_ASSOC))
 	$tiezi->email = $row["email"];
 	$tiezi->advantage = $row["advantage"];
 	$tiezi->requireDate = $row["requireDate"];
+	$tiezi->requireState = $row["requireState"];
     $data[]=$tiezi;
 }
 $json = json_encode($data);//把数据转换为JSON数据.

@@ -8,14 +8,17 @@ mysql_select_db("my_db", $con);
 
 
 
-$sql = "select a.*,b.relName,b.advantage,c.userName,c.userHead from 
+$sql = "select a.*,c.relName,c.advantage,d.userName,d.userHead from 
 (select * from ExpertQuestionRequire)a
 inner join
 (select * from Expert)b
 on a.expertId = b.expertId
 inner join
-(select * from Users)c
-on a.userId = c.userId";
+(select * from ExpertRequire)c
+on b.requireId = c.requireId
+inner join
+(select * from Users)d
+on a.userId = d.userId";
 
 
 $result =mysql_query($sql);//执行SQL

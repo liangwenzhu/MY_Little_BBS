@@ -11,9 +11,16 @@ $questionDetailIntroduce = $_POST[questionDetailIntroduce];
 $advantage = $_POST[advantage];
 $questionRequireStatus = $_POST[questionRequireStatus];
 
-$expertUpdateSql = "UPDATE Expert
+//取到申请表ID
+$requireSelectSql = "select requireId from Expert where expertId = '$expertId'";
+$requireSelectSqlResult = mysql_query($requireSelectSql,$con);
+$requireSelectSqlRow = mysql_fetch_array($requireSelectSqlResult);
+$requireId = $requireSelectSqlRow["requireId"];
+
+//在更改表中更改字段
+$expertUpdateSql = "UPDATE ExpertRequire
         SET advantage = '$advantage'
-        WHERE expertId = '$expertId'";
+        WHERE requireId = '$requireId'";
 
 if(!mysql_query($expertUpdateSql,$con)){
     die('error: ' . mysql_error());

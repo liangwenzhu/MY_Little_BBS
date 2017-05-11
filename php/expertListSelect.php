@@ -8,13 +8,15 @@ mysql_select_db("my_db", $con);
 
 
 
-$sql = "select a.*,b.expertId,b.requireId,b.relName,b.major,b.company,b.job,b.email,b.advantage,b.requireDate,b.comfirmDate 
+$sql = "select a.*,b.expertId,c.requireId,c.relName,c.major,c.company,c.job,c.email,c.advantage,c.requireDate,c.comfirmDate 
 from 
 (select * from Users)a
 inner join
 (select * from Expert)b
-on a.userId = b.userId";
-//order by a.gentieId asc";
+on a.userId = b.userId
+inner join
+(select * from ExpertRequire)c
+on b.requireId = c.requireId ";
 
 
 $result =mysql_query($sql);//执行SQL
@@ -33,6 +35,7 @@ class tiezi
 	public $userCreatedData;
 	
 	public $expertId;
+	
 	public $requireId;
 	public $relName;
 	public $major;
@@ -57,6 +60,7 @@ while ($row= mysql_fetch_array($result, MYSQL_ASSOC))
 	$tiezi->userCreatedData = $row["userCreatedData"];
 	
 	$tiezi->expertId = $row["expertId"];
+	
 	$tiezi->requireId = $row["requireId"];
 	$tiezi->relName = $row["relName"];
 	$tiezi->major = $row["major"];
