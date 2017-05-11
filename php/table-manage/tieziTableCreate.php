@@ -2,8 +2,7 @@
 <body>
 <?php
 include ('conn.php');
-//TieziId INT NOT NULL AUTO_INCREMENT,
-//PRIMARY KEY (TieziId );
+//tieziSection 是外键，对应Section表的Id
 $sql = "CREATE TABLE Tiezi(
     tieziId INT NOT NULL AUTO_INCREMENT,
     tieziTitle varchar(120) NOT NULL,
