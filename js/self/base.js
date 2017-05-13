@@ -992,10 +992,7 @@ function HeadFormUpload(){
         $(this).ajaxSubmit({
             type:'POST',
             url: 'php/uploadUserHead.php',
-            //dataType: 'json',
             data: serializeData,
-            // data: formData,
-            //attention!!!
             contentType: false,
             cache: false,
             processData:false,
