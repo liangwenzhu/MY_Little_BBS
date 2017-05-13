@@ -6,7 +6,7 @@
 </template>
 <script>
 //import aaa from '../seven/inform-bottom.vue'
-import myAside from '../two/aside.vue'
+import myAside from '../three/aside.vue'
 import myHeader from '../three/header.vue'
 export default {
     data:function(){

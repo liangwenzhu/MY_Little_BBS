@@ -70,18 +70,38 @@
       <file leaf-file-name="modelExpertDetail.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertDetail.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
+            <state relative-caret-position="474">
               <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="expertQuestionApply.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="expertQuestionApply.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/three/expertQuestionApply.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
+            <state relative-caret-position="1757">
               <caret line="80" column="43" selection-start-line="80" selection-start-column="43" selection-end-line="80" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sectionManage.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/three/sectionManage.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1710">
+              <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modelSectionEditor.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/three/modelSectionEditor.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="64" column="10" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -131,7 +151,6 @@
         <option value="$PROJECT_DIR$/src/components/two/leftAside.vue" />
         <option value="$PROJECT_DIR$/src/components/three/modelSectionAdd.vue" />
         <option value="$PROJECT_DIR$/src/components/two/modelWindow.vue" />
-        <option value="$PROJECT_DIR$/src/components/three/modelSectionEditor.vue" />
         <option value="$PROJECT_DIR$/src/components/four/userFlexContent.vue" />
         <option value="$PROJECT_DIR$/src/components/four/tieziManageContent.vue" />
         <option value="$PROJECT_DIR$/src/components/three/tieziManage.vue" />
@@ -143,6 +162,7 @@
         <option value="$PROJECT_DIR$/src/components/four/expertManagerApplyContent.vue" />
         <option value="$PROJECT_DIR$/src/components/three/expertApply.vue" />
         <option value="$PROJECT_DIR$/src/components/three/modelExpertDetail.vue" />
+        <option value="$PROJECT_DIR$/src/components/three/modelSectionEditor.vue" />
       </list>
     </option>
   </component>
@@ -155,8 +175,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="6" />
-    <option name="y" value="30" />
+    <option name="x" value="2" />
     <option name="width" value="1364" />
     <option name="height" value="728" />
   </component>
@@ -289,15 +308,15 @@
       <workItem from="1494414968852" duration="12846000" />
       <workItem from="1494487995081" duration="10221000" />
       <workItem from="1494605104686" duration="1723000" />
-      <workItem from="1494644551728" duration="621000" />
+      <workItem from="1494644551728" duration="1432000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="233418000" />
+    <option name="totallyTimeSpent" value="234229000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="6" y="30" width="1364" height="728" extended-state="0" />
+    <frame x="2" y="0" width="1364" height="728" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -517,13 +536,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/three/modelSectionEditor.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1770">
-          <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/two/leftAside.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -580,13 +592,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/three/sectionManage.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/four/managerApplyContent.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -625,7 +630,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/three/modelExpertDetail.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
+        <state relative-caret-position="474">
           <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
           <folding />
         </state>
@@ -633,8 +638,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/three/expertQuestionApply.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
+        <state relative-caret-position="1757">
           <caret line="80" column="43" selection-start-line="80" selection-start-column="43" selection-end-line="80" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/three/sectionManage.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1710">
+          <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/three/modelSectionEditor.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="64" column="10" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
           <folding />
         </state>
       </provider>

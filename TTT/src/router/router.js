@@ -7,6 +7,7 @@ import container from '../components/three/container.vue'
 //import abcd from '../components/content/content.vue'
 import content from '../components/content/content.vue'
 import expert from '../components/expert/expert.vue'
+import download from '../components/download/download.vue'
 Vue.use(Vuex)
 Vue.use(Router)
 
@@ -27,6 +28,19 @@ export default new Router({
 	  path: '/expert/',
       //name: 'expert',
       component: expert,
+	  /*
+	  children: [
+		{
+		  path: '/content/:tieziId',
+          component: content
+		},
+		]
+		*/
+	},
+	{
+	  path: '/download/',
+      //name: 'expert',
+      component: download,
 	  /*
 	  children: [
 		{

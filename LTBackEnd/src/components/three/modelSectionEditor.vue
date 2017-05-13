@@ -63,7 +63,7 @@
             <button class="btn keep" v-on:click="showWarning(true)">删除板块</button>
           </div>
           <div class="warn" v-show="ifShowWarning">
-            <span class="alarm">警告</span>
+            <span class="alarm">Tips</span>
             <img class="close" src="../../../lib/imgs/modal/wrong.png" v-on:click="showWarning(false)">
             <div class="warnTips">
               <p>确定删除板块<b>{{managerData.sectionName}}</b>吗？板块相关删除后不可恢复</p>
@@ -291,7 +291,6 @@ export default {
             p{
               width:350px;
               margin: 0 auto;
-              //background-color: red;
               b{
                 color: #ff2b57;
                 margin-left:5px;

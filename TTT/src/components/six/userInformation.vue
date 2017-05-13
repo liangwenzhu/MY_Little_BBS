@@ -14,8 +14,7 @@
                        v-on:mouseout="userSignInputStateChange(false)"
                 >
             </div>
-            <!--<span class="head-change" v-on:click="touxiangChange">更改头像</span>-->
-            <form class="head-change" >
+            <form class="head-change uploadHeadForm" v-on:submit="AA">
                 <label for="uploadTouxiang">更改头像</label>
                 <input id="uploadTouxiang" class="uploadTouxiang hide" type="file" name="file"/>
             </form>
@@ -32,10 +31,6 @@
     import '../../../lib/js/jqueryForm'
     /*暂时的AJAX上传办法*/
     function HeadFormUpload(){
-        /*模拟点击了被隐藏的上传按钮，目的是变相改变上传按钮样式*/
-        $(".head-change").click(function(){
-            $(".uploadTouxiang").trigger("click");
-        });
         /*头像上传*/
         $('.uploadHeadForm').on('submit',(function(e) {
             e.preventDefault();
@@ -92,7 +87,6 @@
 
         },
         methods: {
-
             userInformation: function () {
                 this.$store.commit('navActive', 'userInformation');
             },
@@ -123,27 +117,53 @@
             userSignInputStateChange(state){
                 this.$store.commit('userSignInputStateChange', state)
             },
-            submitSign(){
+            AA(){
                 var that = this;
-                $.ajax({
-                    url: "php/updateUserSign.php",
-                    type: "GET",
-                    data: {
-                        userSign: that.userSignInput
-                    },
-                    dataType: "text",
-                    success: function (data) {
-                        if (data == "success") {
-                            alert("成功")
-                            that.$store.commit('userStateChange');
-                        } else {
-                            alert("签名变更出错")
+               alert("123");
+            },
+            userHeadSubmit(e){
+                var that = this;
+                /*头像上传*/
+                $('.head-change').on('submit',(function(e) {
+                    e.preventDefault();
+                    //序列化表单
+                    var serializeData = $(this).serialize();
+                    // var formData = new FormData(this);
+                    $(this).ajaxSubmit({
+                        type:'POST',
+                        url: 'php/uploadUserHead.php',
+                        data: serializeData,
+                        contentType: false,
+                        cache: false,
+                        processData:false,
+                        beforeSubmit: function() {//上传前的操作
+                        },
+                        uploadProgress: function (event, position, total, percentComplete){//上传中的操作
+                            //alert("上传中");
+                        },
+                        success:function(data){
+                            if(data == "error format"){
+                                alert("格式错误");
+                            }else if(data == "error size"){
+                                alert("图片必须小于100kb");
+                            }else if(data == "error"){
+                                alert("出现未知错误");
+                            }else{
+                                var picName = data;
+                                var imgAddress = "php/upload/"+picName;
+                                $(".touxiang").attr("src",imgAddress);
+                                $(".littleHead").attr("src",imgAddress);
+                            }
+                        },
+                        error:function(data){
+                            alert("上传头像出错");
                         }
-                    }
-                });
+                    });
+                }));
             },
             userHeadUpLoadClick(){
-                alert("123");
+                alert("变化")
+                $('.head-change').submit();
             }
         },
         computed: {
@@ -238,13 +258,13 @@
                 color: #ff6557;
             }
         }
-        .uploadHeadForm{
-            display: inline;
-            //display: none;
-            margin-top:-50px;
-            .hide{
-                display: none;
-            }
-        }
+        /*.uploadHeadForm{*/
+            /*display: inline;*/
+            /*//display: none;*/
+            /*margin-top:-50px;*/
+            /*.hide{*/
+                /*display: none;*/
+            /*}*/
+        /*}*/
     }
 </style>
