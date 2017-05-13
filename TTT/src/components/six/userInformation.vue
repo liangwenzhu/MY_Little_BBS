@@ -14,28 +14,74 @@
                        v-on:mouseout="userSignInputStateChange(false)"
                 >
             </div>
-            <span class="head-change" v-on:click="touxiangChange">更改头像</span>
+            <!--<span class="head-change" v-on:click="touxiangChange">更改头像</span>-->
+            <form class="head-change" >
+                <label for="uploadTouxiang">更改头像</label>
+                <input id="uploadTouxiang" class="uploadTouxiang hide" type="file" name="file"/>
+            </form>
         </div>
         <div class="operation">
             <span><i class="glyphicon glyphicon-cog"></i>账号设置</span>
             <span class="glyphicon glyphicon-log-out" title="注销" v-on:click="logOff"></span>
-            <!--<form class="uploadHeadForm" >-->
-                <!--<input class="head-upload" type="file" name="file" id="file" v-on:change="AA"/>-->
-                <!--&lt;!&ndash;<input type="submit" name="submit" value="Submit" v-on:click="AA"/>&ndash;&gt;-->
-                <!--&lt;!&ndash;<button v-on:click="AA"></button>&ndash;&gt;-->
-            <!--</form>-->
-            <form class="uploadHeadForm" action="http://localhost:8081/luntan/php/uploadUserHead.php" method="post" enctype="multipart/form-data">
-                <label for="file">Filename:</label>
-                <input id="uploadTouxiang" type="file" name="file" v-on:change="uploadTouxiang"/>
-                <br />
-                <input id="uploadTouxiangSubmit" type="submit" name="submit" value="Submit" />
-            </form>
+
+
         </div>
     </div>
 </template>
 <script>
-
-    module.exports = {
+    import '../../../lib/js/jqueryForm'
+    /*暂时的AJAX上传办法*/
+    function HeadFormUpload(){
+        /*模拟点击了被隐藏的上传按钮，目的是变相改变上传按钮样式*/
+        $(".head-change").click(function(){
+            $(".uploadTouxiang").trigger("click");
+        });
+        /*头像上传*/
+        $('.uploadHeadForm').on('submit',(function(e) {
+            e.preventDefault();
+            //序列化表单
+            var serializeData = $(this).serialize();
+            // var formData = new FormData(this);
+            $(this).ajaxSubmit({
+                type:'POST',
+                url: 'php/uploadUserHead.php',
+                data: serializeData,
+                contentType: false,
+                cache: false,
+                processData:false,
+                beforeSubmit: function() {//上传前的操作
+                },
+                uploadProgress: function (event, position, total, percentComplete){//上传中的操作
+                    //alert("上传中");
+                },
+                success:function(data){//服务器返回操作
+                    if(data == "error format"){
+                        alert("格式错误");
+                    }else if(data == "error size"){
+                        alert("图片必须小于100kb");
+                    }else if(data == "error"){
+                        alert("出现未知错误");
+                    }else{
+                        var picName = data;
+                        var imgAddress = "php/upload/"+picName;
+                        $(".touxiang").attr("src",imgAddress);
+                        $(".littleHead").attr("src",imgAddress);
+                    }
+                },
+                error:function(data){//JS代码有错
+                    alert(data);
+                }
+            });
+        }));
+        //绑定文件选择事件，一选择了图片，就让`form`提交。
+        $(".uploadTouxiang").on("change", function() {
+            $(this).parent().submit();
+        });
+    }
+    $(function(){
+        HeadFormUpload();
+    })
+    export default {
         data: function () {
             return {
                 userSignInput: '',
@@ -96,12 +142,8 @@
                     }
                 });
             },
-
-            touxiangChange(){
-                $("#uploadTouxiang").trigger("click");
-            },
-            uploadTouxiang(){
-                $("#uploadTouxiangSubmit").trigger("click");
+            userHeadUpLoadClick(){
+                alert("123");
             }
         },
         computed: {
@@ -167,7 +209,13 @@
             .head-change{
                 font-size: 14px;
                 color: #ff371e;
-                cursor:pointer;
+                label{
+                    margin-top:2px;
+                    cursor:pointer;
+                }
+                .hide{
+                    display: none;
+                }
             }
             .headSubmit{
                 font-size: 14px;
@@ -191,8 +239,12 @@
             }
         }
         .uploadHeadForm{
-            display: none;
+            display: inline;
+            //display: none;
             margin-top:-50px;
+            .hide{
+                display: none;
+            }
         }
     }
 </style>

@@ -10,7 +10,7 @@
 </template>
 <script>
 //import aaa from '../seven/inform-bottom.vue'
-
+//import '../../../lib/js/jqueryForm'
 export default {
     data:function(){
         return{
