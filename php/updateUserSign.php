@@ -1,11 +1,11 @@
 <?php
 include ('conn.php');
 session_start();
-$usersign = $_GET[userSign];
-$username = $_SESSION['username'];
+$usersign = $_POST[usersign];
+$userid = $_SESSION['userid'];
 $sql = "UPDATE Users
         SET userSign = '$usersign'
-        WHERE userName = '$username'";
+        WHERE userId = '$userid'";
 
 if(!mysql_query($sql,$con)){
     die('error: ' . mysql_error());

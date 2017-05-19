@@ -6,7 +6,9 @@ if (!$con)
 }
 mysql_select_db("my_db", $con);
 //$tiezimaxnum = $_POST[tieziMaxNum];
-$sql = "select count(tieziId) as AllNum from tiezi";
+session_start();
+$sessionId = $_SESSION['sessionid'];
+$sql = "select count(tieziId) as AllNum from tiezi where tieziSection = '$sessionId'";
 $result = mysql_query($sql);//执行SQL
 if(!$result){
     die('wrong' . mysql_error());

@@ -11,10 +11,20 @@ $questionDetailIntroduce = $_POST[questionDetailIntroduce];
 $advantage = $_POST[advantage];
 $questionRequireStatus = $_POST[questionRequireStatus];
 $tieziSection = $_POST[tieziSection];
+/*
 $expertUpdateSql = "UPDATE Expert
         SET advantage = '$advantage'
         WHERE expertId = '$expertId'";
+*/
+$requireSelectSql = "select requireId from Expert where expertId = '$expertId'";
+$requireSelectSqlResult = mysql_query($requireSelectSql,$con);
+$requireSelectSqlRow = mysql_fetch_array($requireSelectSqlResult);
+$requireId = $requireSelectSqlRow["requireId"];
 
+$expertUpdateSql = "UPDATE ExpertRequire
+        SET advantage = '$advantage'
+        WHERE requireId = '$requireId'";
+		
 if(!mysql_query($expertUpdateSql,$con)){
     die('error: ' . mysql_error());
 }

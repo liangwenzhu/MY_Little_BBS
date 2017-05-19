@@ -6,6 +6,8 @@ if (!$con)
 }
 mysql_select_db("my_db", $con);
 
+session_start();
+$sessionId = $_SESSION['sessionid'];
 $pagenum = $_POST[pageNum];
 $tiezimaxnum = $_POST[tieziMaxNum];
 
@@ -13,6 +15,7 @@ $from = ($pagenum-1)*$tiezimaxnum;
 //$to = $from+$tiezimaxnum;
 
 $sql = "select * from tiezi 
+where tieziSection = '$sessionId'
 order by tieziOverhead desc,tieziId desc
 limit $from,$tiezimaxnum";
 $result =mysql_query($sql);//执行SQL
