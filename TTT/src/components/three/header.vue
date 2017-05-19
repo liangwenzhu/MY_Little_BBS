@@ -22,9 +22,6 @@ export default {
         headerBottom
     },
 	computed:{
-        navActive(){
-            return this.$store.state.navActive
-        },
     },
 	methods:{
 

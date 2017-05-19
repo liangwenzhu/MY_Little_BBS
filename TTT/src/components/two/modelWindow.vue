@@ -14,6 +14,10 @@
                 <transition enter-active-class="modelShowOut" leave-active-class="modelShowIn">
                     <login v-if="modelActive == 'login'"></login>
                 </transition>
+                <!--收藏本站提示-->
+                <transition enter-active-class="modelShowOut" leave-active-class="modelShowIn">
+                    <love v-if="modelActive == 'love'"></love>
+                </transition>
                 <!--发帖-->
                 <transition enter-active-class="modelShowOut" leave-active-class="modelShowIn">
                     <fatie v-if="modelActive == 'fatie'"></fatie>
@@ -52,6 +56,7 @@
     import huitie from '../three/modelHuitie.vue';
     import huitieForOtherFloor from '../three/modelHuitieForOtherFloor.vue';
     import login from '../three/modelLogin.vue';
+    import love from '../three/modelLoveTips.vue';
     import register from '../three/modelRegister.vue';
     import registerSuccess from '../three/modelRegisterSuccess.vue';
     //版主申请模块导入
@@ -77,6 +82,7 @@
             huitie,
             huitieForOtherFloor,
             login,
+            love,
             modelExpertRequire,
             modelExpertRequireSuccess,
             modelExpertQuestionRequire,

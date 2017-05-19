@@ -62,9 +62,9 @@ export default {
         return{
             tieziTitle:'',
             tieziContent:'',
-            tieziTag:'',
+            tieziTag:'html',
             tieziSection:'',
-            tieziScore:'',
+            tieziScore:'20',
         }
     },
     components:{
@@ -113,8 +113,10 @@ export default {
             var length = this.contentMinLength;
             if(this.tieziTitle.length < length || this.tieziContent.length < length || this.tieziTag.length < length || this.tieziScore.length < length){
                 alert("内容长度必须大于"+length)
-            }else if(this.tieziTitle.length > this.tieziTitleMaxLength || this.tieziContent.length > this.tieziContentMaxLength){
-                alert("帖子标题或内容超过规定长度")
+            }else if(this.tieziTitle.length > this.$store.state.tieziTitleMaxLength || this.tieziContent.length > this.$store.state.tieziContentMaxLength){
+                alert("帖子标题或内容超过规定长度");
+                alert(this.tieziTitle.length);
+                alert(this.tieziTitleMaxLength);
             }else{
                 $.ajax({
                     url: "php/fatie.php",

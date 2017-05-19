@@ -1,6 +1,6 @@
 <template>
     <section class="section-floor first-floor">
-        <p class="title"> <b>{{$route.params.tieziId}}【求助】</b><b class="title-container">{{firstFloorObj.tieziTitle}}</b><i></i><span class="score"></span></p>
+        <p class="title"> <b>【求助】</b><b class="title-container">{{firstFloorObj.tieziTitle}}</b><i></i><span class="score"></span></p>
         <div class="content">
             <div class="user-information">
                 <p class="user-id">{{firstFloorObj.tieziCreater}}</p>
@@ -12,7 +12,9 @@
             <div class="question-describe">
                 <div class="tiezi-Time">
                     <div class="tiezi-time"><i class="glyphicon glyphicon-user"></i>发表于<span>{{firstFloorObj.tieziCreaterData}}</span>
-                        <div class="floor" id="1"><b>#1</b>电梯直达<input class="anchor-input form-control"></div>
+                        <div class="floor" id="1"><b>#1</b>
+                            <!--电梯直达<input class="anchor-input form-control">-->
+                        </div>
                     </div>
                 </div>
                 <div class="question-main">

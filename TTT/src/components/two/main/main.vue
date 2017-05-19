@@ -1,18 +1,15 @@
 <template>
     <div>
+        <!--<bbsInformation></bbsInformation>-->
         <router-view></router-view>
-
         <myFooter></myFooter>
     </div>
 </template>
 <script>
-    import router from '../../router/router.js';
-    import abcd from '../../components/content/content.vue'
-//import aaa from '../seven/inform-bottom.vue'
-    import myHeader from '../three/header.vue'
-    import middle from '../three/middle.vue'
-    import container from '../three/container.vue'
-    import myFooter from '../three/footer.vue'
+    //import router from '@/router/router.js';
+    import abcd from 'components/content/content.vue'
+    import bbsInformation from 'components/two/main/two/bbsInformation.vue'
+    import myFooter from 'components/three/footer.vue'
 export default {
     data:function(){
         return{
@@ -20,9 +17,7 @@ export default {
         }
     },
     components:{
-        myHeader,
-        middle,
-        container,
+        bbsInformation,
         myFooter,
     },
 	computed:{
@@ -93,6 +88,6 @@ export default {
     // props:['message']
 }
 </script>
-<style lang="less" rel="stylesheet/less" type="text/css" scope>
-    @import '../../../lib/css/selfSet.less';
+<style lang="less" rel="stylesheet/less" type="text/css" scoped>
+    @import '../../../../lib/css/selfSet.less';
 </style>

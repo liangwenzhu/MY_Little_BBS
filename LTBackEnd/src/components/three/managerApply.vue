@@ -2,9 +2,9 @@
     <div class="backendContent">
         <div class="content-header">
             <div class="search">
-                <button class="btn">撤销版主</button>
-                <button class="btn">设为版主</button>
-                <button class="btn">忽略</button>
+                <!--<button class="btn">撤销版主</button>-->
+                <!--<button class="btn">设为版主</button>-->
+                <!--<button class="btn">忽略</button>-->
                 <input type="search" placeholder="搜索">
                 <span class="glyphicon glyphicon-search"></span>
             </div>

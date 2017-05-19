@@ -8,13 +8,13 @@
           <router-link to="/expertApply"><li v-bind:class="{active:activeOption == 'expertApply'}" v-on:click="active('expertApply')"><span class="glyphicon glyphicon-bookmark"></span>专家管理</li></router-link>
           <router-link to="/expertQuestionApply"><li v-bind:class="{active:activeOption == 'expertQuestion'}" v-on:click="active('expertQuestion')"><span class="glyphicon glyphicon-bell"></span>专家问答</li></router-link>
           <router-link to="/jubaoManage"><li v-bind:class="{active:activeOption == 'jubaoManage'}" v-on:click="active('jubaoManage')"><span class="glyphicon glyphicon-bell"></span>举报管理</li></router-link>
-          <li><span class="glyphicon glyphicon-file"></span>文章管理</li>
-          <!--<li><span class="glyphicon glyphicon-paperclip"></span>资料管理</li>-->
-          <li><span class="glyphicon glyphicon-cog"></span>参数设置</li>
-          <li><span class="glyphicon glyphicon-plus"></span>其他</li>
-          <li><span class="glyphicon glyphicon-plus"></span>{{activeOption}}</li>
+          <!--<li><span class="glyphicon glyphicon-file"></span>文章管理</li>-->
+          <!--&lt;!&ndash;<li><span class="glyphicon glyphicon-paperclip"></span>资料管理</li>&ndash;&gt;-->
+          <!--<li><span class="glyphicon glyphicon-cog"></span>参数设置</li>-->
+          <!--<li><span class="glyphicon glyphicon-plus"></span>其他</li>-->
+          <!--<li><span class="glyphicon glyphicon-plus"></span>{{activeOption}}</li>-->
         </ul>
-        <p><span class="glyphicon glyphicon-trash"></span>回收站</p>
+        <!--<p><span class="glyphicon glyphicon-trash"></span>回收站</p>-->
     </aside>
 </template>
 <script>

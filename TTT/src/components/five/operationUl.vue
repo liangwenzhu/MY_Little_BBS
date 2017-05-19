@@ -7,7 +7,7 @@
             v-on:mouseout="none">
           <i class="glyphicon glyphicon-search"></i>
         </li>
-        <li><span class="glyphicon glyphicon-heart"></span></li>
+        <li v-on:click="modelLoveShow"><span class="glyphicon glyphicon-heart"></span></li>
         <li class="inform-bell"
             v-bind:class="{active:navActive=='inform'}"
             v-on:mousemove="inform"
@@ -52,6 +52,10 @@
             },
             none:function(){
                 this.$store.commit('navActive','none')
+            },
+            modelLoveShow(){
+                this.$store.commit('modelShow',true);
+                this.$store.commit('modelActive','love');
             }
         },
 

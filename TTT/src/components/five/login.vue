@@ -2,8 +2,6 @@
     <ul class="login-in">
         <li class="zhuce" v-on:click="register">注册</li>
         <li class="denglu" v-on:click="login">登录</li>
-        <li>{{modelShow}}</li>
-        <li>{{modelActive}}</li>
     </ul>
 </template>
 <script>

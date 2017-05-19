@@ -8,8 +8,8 @@
             </router-link>
             <ul>
                 <li class="active">管理</li>
-                <li>分享</li>
-                <li>更多</li>
+                <!--<li>分享</li>-->
+                <!--<li>更多</li>-->
             </ul>
         </div>
         <div class="top-right">

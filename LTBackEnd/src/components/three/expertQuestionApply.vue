@@ -2,9 +2,9 @@
     <div class="backendContent">
         <div class="content-header">
             <div class="search">
-                <button class="btn">撤销专家</button>
-                <button class="btn">设为专家</button>
-                <button class="btn">忽略</button>
+                <!--<button class="btn">撤销专家</button>-->
+                <!--<button class="btn">设为专家</button>-->
+                <!--<button class="btn">忽略</button>-->
                 <input type="search" placeholder="问答搜索">
                 <span class="glyphicon glyphicon-search"></span>
             </div>

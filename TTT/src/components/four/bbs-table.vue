@@ -35,12 +35,13 @@ export default {
     // props:['message']
 }
 </script>
-<style lang="less" rel="stylesheet/less" type="text/css" scope>
+<style lang="less" rel="stylesheet/less" type="text/css">
     @import '../../../lib/css/selfSet.less';
     .bbs-main{
         background-color: rgba(0, 0, 0, 0.3);
         font-size: 13px;
         color:white;
+        margin-top:10px;
         tr{
             .transition(0.1s);
             &:hover{

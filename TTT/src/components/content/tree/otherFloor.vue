@@ -27,7 +27,6 @@
                                 <span class="glyphicon glyphicon-pencil"></span><b></b><i>{{item.gentieId}}小尾巴分割线</i><b></b>
                             </div>
                             <p>{{item.userSign}}</p>
-                            <p>{{ifLouZhu}}</p>
                         </div>
                         <div class="operation">
                             <button class="btn messag" v-on:click="huitieForOtherFloor">回帖</button>

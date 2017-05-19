@@ -24,7 +24,7 @@ export default {
     // props:['message']
 }
 </script>
-<style lang="less" rel="stylesheet/less" type="text/css" scope>
+<style lang="less" rel="stylesheet/less" type="text/css" scoped>
     @import '../../../lib/css/selfSet.less';
     
 </style>

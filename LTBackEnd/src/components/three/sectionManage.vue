@@ -2,8 +2,7 @@
     <div class="backendContent">
         <div class="content-header">
             <div class="search">
-                <!--<button class="btn" v-on:click="sectionAdd">添加板块</button>-->
-                <div class="Tip">可以对板块进行相关操作</div>
+                <button class="btn" v-on:click="sectionAdd">添加板块</button>
                 <input type="search" placeholder="搜索">
                 <span class="glyphicon glyphicon-search"></span>
             </div>

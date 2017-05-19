@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+
     <myHeader></myHeader>
     <myMain></myMain>
     <modelWindow></modelWindow>
@@ -7,9 +8,10 @@
 </template>
 
 <script>
-
-import myHeader from './components/two/myHeader.vue'
-import myMain from './components/two/main.vue'
+  import myHeader from 'components/two/header/header.vue'
+//import myHeader from './components/two/myHeader.vue'
+//import myMain from './components/two/main.vue'
+  import myMain from './components/two/main/main.vue'
 import modelWindow from './components/two/modelWindow.vue'
 export default {
   name: 'app',

@@ -12,7 +12,6 @@
             <li class="total_tieziPage">共：<span>{{pageCount}}</span> 页</li>
         </ul>
         <div class="button-group">
-            {{pageClickNum}}
             <button class="btn btn-success post" v-on:click="fatie">发帖</button>
             <button class="btn btn-success postReload" v-on:click="firstPageClick">刷新</button>
         </div>
@@ -34,6 +33,9 @@ export default {
         bbsPaginationLi,
     },
 	computed:{
+        sectionId(){
+          return this.$store.state.sectionId;
+        },
         tieziCount(){
           return   this.$store.state.tieziCount;
         },
@@ -144,26 +146,74 @@ export default {
                     that.$store.commit('tieziObj',data);
                 },
                 error:function(){
-                    alert("失败");
+                    alert("分页失败");
+                }
+            });
+        },
+        /*根据当前板块进行查询*/
+        sectionId(){
+            //初始化页码
+            var that = this;
+            this.pageCount = '',
+            that.pages.length = 0;
+            var tieziMaxNum = that.$store.state.tieziMaxNum;
+            this.$store.commit({
+                type:'pageReflash',
+                pageNum:1,
+            });
+            /*分页对象构建，同时初始帖子总数和页码总数*/
+            $.ajax({
+                url:"php/tieziSelectCount.php",
+                data:{
+                    tieziMaxNum:tieziMaxNum,
+                },
+                type:"post",
+                dataType:"text",
+                success:function(data){
+                    var pageNum = Math.ceil(data/tieziMaxNum);
+                    that.pageCount = pageNum;
+                    //that.tieziCount = data;
+                    that.$store.commit('tieziCount',data);
+                    for(var i=2;i < that.pageCount+1;i++){
+                        that.pages.push({page:i})
+                    }
+                }
+            });
+            var pageNum = that.$store.state.pageClickNum;
+            /*分页数据构建*/
+            $.ajax({
+                url:"php/tieziFenyeSelect.php",
+                data:{
+                    pageNum:pageNum,
+                    tieziMaxNum:tieziMaxNum,
+                },
+                type:"post",
+                dataType:"JSON",
+                success:function(data){
+                    that.$store.commit('tieziObj',data);
+                },
+                error:function(){
+                    alert("分页查询失败");
                 }
             });
         }
     },
+
     created:function(){
         this.$store.commit('tieziStateChange');
         /*分页组件被复用了，因此created在这里会执行两次。*/
         this.$store.commit('pageinit');
     },
-
 }
 </script>
-<style lang="less" rel="stylesheet/less" type="text/css" scope>
+<style lang="less" rel="stylesheet/less" type="text/css" scoped>
     @import '../../../lib/css/selfSet.less';
     .bbs-pagination{
         font-size: 12px;
         overflow: hidden;
-        margin-top:10px;
-        margin-bottom:10px;
+        margin-top:15px;
+        //margin-bottom:10px;
+        //height:20px;
         ul{
             padding: 0;
             li{

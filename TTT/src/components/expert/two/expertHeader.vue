@@ -8,7 +8,7 @@
                     不限专业领域、不限技术方向，只要你是一个有活力并乐于分享的开发者，只要你愿意用自己的实力和经验帮助众多从业者共同学习、共同进步，我们就欢迎你来做客社区问答，如果你也有此意，就请填写下面的问题吧，我们会及时与你取得联系。
                 </article>
                 <button class="btn" v-on:click="expertRequire"><span class="glyphicon glyphicon-edit"></span>立即申请</button>
-                <button class="btn registerSuccess" v-on:click="expertRequireSuccess"><span class="glyphicon glyphicon-ok"></span>申请成功？请戳这里</button>
+                <!--<button class="btn registerSuccess" v-on:click="expertRequireSuccess"><span class="glyphicon glyphicon-ok"></span>申请成功？请戳这里</button>-->
             </div>
         </div>
         <!--声明和开启问答入口-->
@@ -58,11 +58,12 @@ export default {
     // props:['message']
 }
 </script>
-<style lang="less" rel="stylesheet/less" type="text/css" scope>
+<style lang="less" rel="stylesheet/less" type="text/css" scoped>
     @import '../../../../lib/css/selfSet.less';
     .expert{
-        margin-top:10px;
+        //margin-top:10px;
         line-height: 22px;
+        margin-top:0;
     }
     .expertHeader{
         background: url('../../../../lib/imgs/expert-ad.png');
@@ -114,5 +115,4 @@ export default {
         //background-color: blue;
         margin-top:10px;
     }
-
 </style>

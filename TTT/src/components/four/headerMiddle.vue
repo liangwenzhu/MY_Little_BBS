@@ -2,7 +2,7 @@
     <nav>
         <ul class="nav">
             <li class="active">首页</li>
-            <li v-on:mouseover="mouseOver" v-on:mouseout="mouseOut">精选板块</li>
+            <li v-on:mouseover="mouseOver" v-on:mouseout="mouseOut"><router-link to="/">精选板块</router-link></li>
             <li>论坛帮助</li>
             <li><router-link to="/expert">专家问答</router-link></li>
         </ul>
@@ -112,10 +112,12 @@ export default {
 <style lang="less" rel="stylesheet/less" type="text/css" scoped>
     @import '../../../lib/css/selfSet.less';
     nav{
-        background-color: rgba(69, 154, 221, 0.1);
+        background-color: #ffffff;
         //overflow: hidden;
         z-index: 1;
         position: relative;
+        color: #545454;
+
         .nav{
             padding: 20px;
             padding-bottom:0;
@@ -124,7 +126,7 @@ export default {
                 margin-left:50px;
                 //margin-top: 20px;
                 padding-bottom:20px;
-                color:white;
+                color:inherit;
                 font-size:20px;
                 cursor: pointer;
                 &:nth-child(1){

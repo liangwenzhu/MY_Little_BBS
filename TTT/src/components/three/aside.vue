@@ -24,7 +24,6 @@ export default {
         }
     },
     components:{
-        //aaa,
     },
 	computed:{
         userScore(){

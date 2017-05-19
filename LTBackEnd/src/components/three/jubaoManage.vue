@@ -2,11 +2,11 @@
     <div class="backendContent-tiezi">
         <div class="content-header">
             <div class="search">
-                <button class="btn">发布公告</button>
-                <button class="btn">发布文章</button>
-                <button class="btn">顶置帖子</button>
-                <button class="btn">取消置顶</button>
-                <button class="btn delete">删除帖子</button>
+                <!--<button class="btn">发布公告</button>-->
+                <!--<button class="btn">发布文章</button>-->
+                <!--<button class="btn">顶置帖子</button>-->
+                <!--<button class="btn">取消置顶</button>-->
+                <!--<button class="btn delete">删除帖子</button>-->
                 <input type="search" placeholder="搜索">
                 <span class="glyphicon glyphicon-search"></span>
             </div>

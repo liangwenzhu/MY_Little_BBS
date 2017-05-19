@@ -106,6 +106,10 @@ const store = new Vuex.Store({
 		state.userHead = "http://localhost:8081/luntan/php/upload/" + object.userHead;
 		state.userScore = object.userScore;
 	},
+	/*用户名变更*/
+	userSign(state,val){
+		state.userSign = val;
+	},
 	/*板块Id变更*/
 	sectionId(state,val){
 		state.sectionId = val;

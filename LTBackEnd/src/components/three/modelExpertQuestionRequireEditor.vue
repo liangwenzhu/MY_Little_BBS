@@ -69,8 +69,8 @@
               <dt>专家简介</dt>
               <dd><textarea class="form-control" v-model="advantage"></textarea></dd>
             </dl>
-            <button class="btn" v-if="ifPushed" v-on:click="store">保存修改</button>
-            <button class="btn keepPushed" v-if="ifPushed==false" v-on:click="pushedStore">保存修改</button>
+            <button class="btn" v-if="ifPushed" v-on:click="store">保存修改2</button>
+            <button class="btn keepPushed" v-if="ifPushed==false" v-on:click="pushedStore">保存修改1</button>
             <button class="btn keep" v-if="ifPushed" v-on:click="questionRequirePush">通过审核，发布</button>
           </div>
         </div>
@@ -273,8 +273,8 @@ export default {
       var questionDetailIntroduce = this.c_questionDetailIntroduce;
       var advantage = this.c_advantage;
       var questionRequireStatus = this.questionRequireStatus;
-
       var tieziSection = "expert";
+
       $.ajax({
         url:"php/backend/expertQuestionRequireManagerPushedUpdate.php",
         data:{
@@ -286,9 +286,9 @@ export default {
           questionIntroduce:questionIntroduce,
           questionDetailIntroduce:questionDetailIntroduce,
           advantage:advantage,
-          //questionRequireStatus:questionRequireStatus,
+          questionRequireStatus:questionRequireStatus,
 
-          tieziSection,
+          tieziSection:tieziSection,
         },
         type:"post",
         success:function(data){
@@ -296,20 +296,20 @@ export default {
           if(data=="success"){
             alert("更改成功");
             /*嵌套查询，查询刚更改的最新的数据，并传给vuex*/
-            $.ajax({
-              url:"php/backend/expertQuestionRequireManagerSelect.php",
-              data:{
-                questionRequireId:questionRequireId,
-              },
-              type:"post",
-              dataType:"json",
-              success:function(data){
-                that.$store.commit('expertQuestionRequireObj',data);
-              },
-              error:function(data){
-                alert("查询刚刚编辑的专家问题申请详细信息失败");
-              }
-            });
+//            $.ajax({
+//              url:"php/backend/expertQuestionRequireManagerSelect.php",
+//              data:{
+//                questionRequireId:questionRequireId,
+//              },
+//              type:"post",
+//              dataType:"json",
+//              success:function(data){
+//                that.$store.commit('expertQuestionRequireObj',data);
+//              },
+//              error:function(data){
+//                alert("查询刚刚编辑的专家问题申请详细信息失败");
+//              }
+//            });
             //嵌套查询结束
           }else{
             alert("不是success");

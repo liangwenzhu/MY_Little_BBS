@@ -8,9 +8,9 @@
     </div>
 </template>
 <script>
-import login from '../five/login'
-import navWindow from '../five/navWindow'
-import operationUl from '../five/operationUl'
+import login from 'components/five/login'
+import navWindow from 'components/five/navWindow'
+import operationUl from 'components/five/operationUl'
 import logo from '../../../lib/imgs/icon/logo.png'
 export default {
     data:function(){
@@ -40,13 +40,13 @@ export default {
     // props:['message']
 }
 </script>
-<style lang="less" rel="stylesheet/less" type="text/css" scope>
+<style lang="less" rel="stylesheet/less" type="text/css" scoped>
     @import '../../../lib/css/selfSet.less';
     .header-top {
         width: 100%;
         height: 40px;
         //display: inline-block;
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: rgb(125, 125, 125);
         //background-color: #20446a;
         /*position: relative;*/
         overflow: hidden;

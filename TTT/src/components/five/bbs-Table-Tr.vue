@@ -1,7 +1,7 @@
 <template>
     <tr class="overHeadTr" >
         <td>
-            <p><span class="overhead" v-show="ifOverHead.tieziOverhead == 1">【置顶】</span><router-link v-bind:to="tieziUrl">{{item.tieziTitle}}</router-link><b class="hidden1">{{item.tieziId}}</b></p>
+            <p><span class="overhead" v-show="ifOverHead.tieziOverhead == 1">【置顶】</span><router-link v-bind:to="tieziUrl">{{item.tieziTitle}}</router-link><b class="hidden">{{item.tieziId}}</b></p>
         <td>
             <p>{{item.tieziScore}}</p>
         </td>

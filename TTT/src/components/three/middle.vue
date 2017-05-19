@@ -34,11 +34,11 @@ export default {
     // props:['message']
 }
 </script>
-<style lang="less" rel="stylesheet/less" type="text/css" scope>
+<style lang="less" rel="stylesheet/less" type="text/css" scoped>
     @import '../../../lib/css/selfSet.less';
     .middle-select{
         width:100%;
-        float: right;
+        //float: right;
         margin-top:20px;
         .bbs-classify{
             height:30px;

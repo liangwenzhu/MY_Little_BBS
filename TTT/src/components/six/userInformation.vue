@@ -164,6 +164,23 @@
             userHeadUpLoadClick(){
                 alert("变化")
                 $('.head-change').submit();
+            },
+            submitSign(){
+                var that = this;
+                var usersign = this.userSignInput;
+
+                $.ajax({
+                    url: "php/updateUserSign.php",
+                    type:'post',
+                    data:{
+                        usersign:usersign,
+                    },
+                    success(data){
+                        if(data == 'success'){
+                            that.$store.commit('userSign',usersign);
+                        }
+                    }
+                })
             }
         },
         computed: {

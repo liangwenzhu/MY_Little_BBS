@@ -24,7 +24,9 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
 	  //'jquery': path.resolve(__dirname, '../lib/js/lib/jquery.min.js'),
-      '@': resolve('src')
+      '@': resolve('src'),
+	  'components': resolve('src/components'),
+	  'lib': resolve('lib')
     }
   },
    // 增加一个plugins，调用JQ

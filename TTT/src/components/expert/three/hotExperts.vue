@@ -5,7 +5,8 @@
             <expertList v-for="item in expertsObj" v-bind:item="item"></expertList>
         </div>
         <div class="btn-group">
-            <button class="btn"><span class="glyphicon glyphicon-edit"></span>申请成为专家</button>
+
+            <button class="btn"  v-on:click="expertRequire"><span class="glyphicon glyphicon-edit"></span>申请成为专家</button>
             <button class="btn select" v-on:click="chooseSection">板块选择</button>
         </div>
     </div>
@@ -29,7 +30,12 @@ export default {
 	methods:{
         chooseSection(){
         this.section = "123";
-    }
+    },
+        expertRequire(){
+            this.$store.commit('modelShow',true);
+            this.$store.commit('modelActive','modelExpertRequire');
+        },
+
 },
     created(){
         var that = this;
